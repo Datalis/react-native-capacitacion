@@ -15,6 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/my-css.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
@@ -78,19 +79,19 @@
 						<h4>Introducción a Nodejs</h4>
 						<h6>Ejemplo de App</h6>
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							const http = require('http')
+							const http = require('http');
 
-							const hostname = '127.0.0.1'
-							const port = 3000
+							const hostname = '127.0.0.1';
+							const port = 3000;
 
 							const server = http.createServer((req, res) => {
-								res.statusCode = 200
-								res.setHeader('Content-Type', 'text/plain')
-								res.end('Hello World\n')
+								res.statusCode = 200;
+								res.setHeader('Content-Type', 'text/plain');
+								res.end('Hello World\n');
 							})
 
 							server.listen(port, hostname, () => {
-								console.log(`Server running at http://${hostname}:${port}/`)
+								console.log(`Server running at http://${hostname}:${port}/`);
 							})
 						</code></pre>
 					</section>
@@ -117,10 +118,12 @@
 					<section>
 						<h4>Principales Comandos</h4>
 						<ul>
-							<li>git commit -m "Mensaje"</li>
-							<li>git push</li>
+							<li>git remote add _remote_addr_</li>
 							<li>git pull</li>
 							<li>git add _filename_</li>
+							<li>git commit -m "Mensaje"</li>
+							<li>git push</li>
+							<li>git clone _repository_name_</li>
 						</ul>
 					</section>
 					<section>
@@ -193,8 +196,8 @@
 
 							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 								const user = {name: "Rose", last_name: "Ocana"};
-								const user.name = "John";  
-								const user.last_name = "Doe";  
+								user.name = "John";  
+								user.last_name = "Doe";  
 
 								console.log(user); // {name: "John", last_name: "Doe"}
 							</code></pre>
@@ -257,7 +260,7 @@
 						<h2>Operadores de propagación</h2>
 						<ul>
 							<li>Propagar los elementos de un iterable</li>
-							<li>Utilizable en Array, Strings</li>
+							<li>Utilizable en Array, Strings y Objetos</li>
 						</ul>	
 					</section>
 					
@@ -266,7 +269,7 @@
 						<h6 data-id="code-title">Strings</h>
 						
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							const array = [ ..."Hola"]    // [ 'H', 'o', 'l', 'a' ]
+							const array = [ ..."Hola"];    // [ 'H', 'o', 'l', 'a' ]
 						</code></pre>
 					</section>
 					
@@ -277,8 +280,8 @@
 							let originalArray = [1, 2, 3, 4, 5];
 							let copyArray = [...originalArray];
 
-							console.log(originalArray) // [1, 2, 3, 4, 5]
-							console.log(copyArray) // [1, 2, 3, 4, 5]
+							console.log(originalArray); // [1, 2, 3, 4, 5]
+							console.log(copyArray); // [1, 2, 3, 4, 5]
 						</code></pre>
 					</section>
 
@@ -304,8 +307,8 @@
 					
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 							function hola (primero, segundo, ...resto) {
-								console.log(primero, segundo)  // 1 2
-								console.log(resto) // [3,4,5,6]
+								console.log(primero, segundo);  // 1 2
+								console.log(resto); // [3,4,5,6]
 							}
 							  
 							hola(1,2,3,4,5);
@@ -313,7 +316,7 @@
 					</section>
 					
 					<section data-auto-animate>
-						<h2 data-id="code-title">También sirve para obtener los elementos restantes de un array</h2>
+						<h3 data-id="code-title">También sirve para obtener los elementos restantes de un array</h3>
 						
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 							const array = [0,1,2,3,4,5];
@@ -348,21 +351,20 @@
 
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 							function nombre (parámetros) {
-								return valorRetornado
+								return valorRetornado;
 							}
 						</code></pre>
 
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 							const nombre = (parámetros) => {
-								return valorRetornado
+								return valorRetornado;
 							}
 						</code></pre>
 						
 					</section>
 					<section>
 						<h2>Arrow functions</h2>
-						<p>Omitir paréntesis en las funciones flecha
-							Si existe un solo parámetro</p>
+						<p>Omitir paréntesis en las funciones flecha si existe un solo parámetro</p>
 
 							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 								const nombre = elem => {
@@ -377,11 +379,11 @@
 
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 							function suma (num1, num2) {
-								return num1 + num2
+								return num1 + num2;
 							}
 						</code></pre>
 						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							const suma = (num1, num2) => num1 + num2
+							const suma = (num1, num2) => num1 + num2;
 						</code></pre>
 
 					</section>
@@ -392,9 +394,9 @@
 
 						<ul>
 							<li>No pueden ser usadas como métodos</li>
-							<li>No hay this, arguments or super</li>
-							<li>No se puede usar con call, aply y bind que son temas que utilizan scope</li>
-							<li >No se pueden con yield</li>
+							<li>No hay <code>this</code>, <code>arguments</code> o <code>super</code></li>
+							<li>No se puede usar con <code>call</code>, <code>apply</code> y <code>bind</code> que son temas que utilizan <code>scope</code></li>
+							<li >No se pueden con <code>yield</code></li>
 						</ul>
 
 					</section>
@@ -456,11 +458,11 @@
 
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						// Usando función anonima
-						console.log('A')
+						console.log('A');
 						setTimeout(function () {
-							console.log('B')
+							console.log('B');
 						}, 2000)
-						console.log('C')
+						console.log('C');
 						/* Resultado del código anterior
 						 A
 						 C
@@ -472,8 +474,8 @@
 					<h2>Asincronismo en JS</h2>
 					<h6>Preguntas</h6>
 
-					<p class="fragment">Quién maneja este mecanismo</p>
-					<p class="fragment">Como saber que ejecutar cuando tengamos el resultado esperado?</p>
+					<p class="fragment">¿Quién maneja este mecanismo?</p>
+					<p class="fragment">¿Cómo saber que ejecutar cuando tengamos el resultado esperado?</p>
 				
 				</section>
 
@@ -493,7 +495,7 @@
 
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						setTimeout(function(){
-							console.log('Hola')
+							console.log('Hola');
 						}, 2000);
 					</code></pre>
 				</section>
@@ -575,11 +577,11 @@
 
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|2|6|4-5|10"><script type="text/template">
 						// Usando función anonima
-						console.log('A')
+						console.log('A');
 						setTimeout(function () {
-							console.log('B')
+							console.log('B');
 						}, 2000)
-						console.log('C')
+						console.log('C');
 						/* Resultado del código anterior
 						 A
 						 C
@@ -624,8 +626,8 @@
 				<section>
 					<h2>Asincronismo en JS</h2>
 					<h5>Alrededor del event Loop</h5>
-					<a href="https://slides.com" target="_blank">
-						http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
+					<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank">
+						Ver programa ilustrativo
 					</a>
 				</section>
 
@@ -637,7 +639,7 @@
 					<h2>Asincronismo en JS</h2>
 					<h5>Promesas</h5>
 					<p>
-						La función asíncrona comienza la operación y devuelve un objeto al que se le adjutan los controladores a esta promesa, que seran ejecutados cuando la promesa sea resuelta o falle
+						La función asíncrona comienza la operación y devuelve un objeto al que se le adjutan los controladores a esta promesa, que serán ejecutados cuando la promesa sea resuelta o falle
 					</p>
 				</section>
 
