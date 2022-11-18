@@ -1,876 +1,1093 @@
 <!doctype html>
-<html lang="en">
+<html>
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>React Native - Contyleg</title>
+	<title>reveal.js</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- My css -->
+	<link rel="stylesheet" href="dist/styles.css">
+</head>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/my-css.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="rgb(40, 44, 52)">
+				<a href="https://nodejs.org/en/">
+					<!-- <img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"> -->
+					<!-- <svg style="height: 180px; margin: 0 auto 4rem auto; background: transparent;"" viewBox="0 0 111 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="light-mode-only"><g clip-path="url(#nodejs-logo-light-mode_svg__clip0_8323_10808)"><path d="M97.6894 32.7407C97.4024 32.7407 97.1345 32.6637 96.8858 32.5289L94.3412 31.0081C93.9586 30.7963 94.1499 30.7193 94.2647 30.6808C94.7813 30.5075 94.8769 30.469 95.4126 30.161C95.47 30.1225 95.5466 30.1418 95.604 30.1803L97.5555 31.3546C97.632 31.3931 97.7276 31.3931 97.785 31.3546L105.419 26.9075C105.495 26.869 105.534 26.792 105.534 26.6958V17.8209C105.534 17.7247 105.495 17.6477 105.419 17.6092L97.785 13.1814C97.7085 13.1429 97.6128 13.1429 97.5555 13.1814L89.9217 17.6092C89.8451 17.6477 89.8069 17.7439 89.8069 17.8209V26.6958C89.8069 26.7728 89.8451 26.869 89.9217 26.9075L92.0071 28.1204C93.1359 28.6979 93.8438 28.0241 93.8438 27.3503V18.591C93.8438 18.4755 93.9394 18.36 94.0734 18.36H95.0491C95.1639 18.36 95.2787 18.4562 95.2787 18.591V27.3503C95.2787 28.8712 94.456 29.7567 93.0211 29.7567C92.5811 29.7567 92.2367 29.7567 91.2609 29.2755L89.252 28.1204C88.7546 27.8316 88.4485 27.2926 88.4485 26.715V17.8402C88.4485 17.2626 88.7546 16.7236 89.252 16.4348L96.8858 11.9878C97.3641 11.7183 98.0146 11.7183 98.4929 11.9878L106.127 16.4348C106.624 16.7236 106.93 17.2626 106.93 17.8402V26.715C106.93 27.2926 106.624 27.8316 106.127 28.1204L98.4929 32.5674C98.2633 32.6637 97.9764 32.7407 97.6894 32.7407Z" fill="#5FA04E"></path><path d="M100.062 26.6379C96.7134 26.6379 96.0247 25.0978 96.0247 23.7887C96.0247 23.6732 96.1203 23.5577 96.2542 23.5577H97.2491C97.3639 23.5577 97.4596 23.6347 97.4596 23.7502C97.6126 24.7705 98.0527 25.2711 100.081 25.2711C101.688 25.2711 102.377 24.9053 102.377 24.039C102.377 23.5385 102.185 23.1727 99.6789 22.9224C97.5935 22.7106 96.2925 22.2486 96.2925 20.5737C96.2925 19.0144 97.5935 18.0903 99.7746 18.0903C102.224 18.0903 103.429 18.9374 103.582 20.7855C103.582 20.8433 103.563 20.901 103.525 20.9588C103.486 20.9973 103.429 21.0358 103.371 21.0358H102.357C102.262 21.0358 102.166 20.9588 102.147 20.8625C101.917 19.8037 101.324 19.4572 99.7555 19.4572C97.9953 19.4572 97.7848 20.0732 97.7848 20.5352C97.7848 21.0935 98.0335 21.2668 100.406 21.5748C102.759 21.8828 103.869 22.3256 103.869 23.9812C103.869 25.6753 102.472 26.6379 100.062 26.6379Z" fill="#5FA04E"></path><path d="M111.083 17.3202C111.083 18.1288 110.413 18.8026 109.609 18.8026C108.806 18.8026 108.136 18.148 108.136 17.3202C108.136 16.4732 108.825 15.8379 109.609 15.8379C110.394 15.8379 111.083 16.4924 111.083 17.3202ZM108.366 17.3202C108.366 18.0133 108.921 18.5716 109.59 18.5716C110.279 18.5716 110.834 17.994 110.834 17.3202C110.834 16.6272 110.279 16.0882 109.59 16.0882C108.94 16.0882 108.366 16.6272 108.366 17.3202ZM109.055 16.4924H109.629C109.82 16.4924 110.203 16.4924 110.203 16.9352C110.203 17.2432 110.011 17.301 109.896 17.3395C110.126 17.3587 110.145 17.5128 110.164 17.7245C110.183 17.8593 110.203 18.0903 110.241 18.1673H109.896C109.896 18.0903 109.839 17.6668 109.839 17.6475C109.82 17.5513 109.782 17.5128 109.667 17.5128H109.38V18.1865H109.055V16.4924ZM109.361 17.224H109.609C109.82 17.224 109.858 17.07 109.858 16.993C109.858 16.762 109.705 16.762 109.609 16.762H109.342V17.224H109.361Z" fill="#5FA04E"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M18.1565 17.4415C18.1565 17.095 17.9652 16.7678 17.6591 16.5945L9.56614 11.8779C9.43221 11.8009 9.27915 11.7624 9.12609 11.7432C9.10696 11.7432 9.04956 11.7432 9.04956 11.7432C8.89651 11.7432 8.74345 11.8009 8.60952 11.8779L0.497439 16.5752C0.191323 16.7485 0 17.0758 0 17.4415L0.0191323 30.0704C0.0191323 30.2437 0.114794 30.4169 0.267852 30.4939C0.42091 30.5902 0.612233 30.5902 0.746159 30.4939L5.56749 27.7217C5.87361 27.5485 6.06493 27.2212 6.06493 26.8747V20.9645C6.06493 20.618 6.25625 20.2907 6.56237 20.1175L8.60952 18.9239C8.76258 18.8276 8.93477 18.7891 9.10696 18.7891C9.27915 18.7891 9.45134 18.8276 9.58527 18.9239L11.6324 20.1175C11.9385 20.2907 12.1299 20.618 12.1299 20.9645V26.8747C12.1299 27.2212 12.3212 27.5485 12.6273 27.7217L17.4104 30.4939C17.5634 30.5902 17.7547 30.5902 17.9078 30.4939C18.0609 30.4169 18.1565 30.2437 18.1565 30.0704V17.4415Z" fill="#333333"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M57.1482 0.0577539C56.9951 -0.0192513 56.8038 -0.0192513 56.6698 0.0577539C56.5168 0.15401 56.4211 0.308021 56.4211 0.481283V12.9946C56.4211 13.1101 56.3637 13.2256 56.2489 13.3027C56.1341 13.3604 56.0194 13.3604 55.9046 13.3027L53.8765 12.1283C53.5704 11.9551 53.2069 11.9551 52.9008 12.1283L44.7887 16.8449C44.4826 17.0182 44.2913 17.3454 44.2913 17.6919V27.1058C44.2913 27.4524 44.4826 27.7796 44.7887 27.9529L52.9008 32.6695C53.2069 32.8427 53.5704 32.8427 53.8765 32.6695L61.9886 27.9529C62.2947 27.7796 62.4861 27.4524 62.4861 27.1058V3.6385C62.4861 3.27272 62.2947 2.94545 61.9886 2.77219L57.1482 0.0577539ZM56.402 24.0064C56.402 24.1026 56.3637 24.1796 56.2872 24.2181L53.513 25.8353C53.4365 25.8738 53.3408 25.8738 53.2643 25.8353L50.4901 24.2181C50.4136 24.1796 50.3753 24.0834 50.3753 24.0064V20.7722C50.3753 20.6759 50.4136 20.5989 50.4901 20.5604L53.2643 18.9433C53.3408 18.9048 53.4365 18.9048 53.513 18.9433L56.2872 20.5604C56.3637 20.5989 56.402 20.6952 56.402 20.7722V24.0064Z" fill="#333333"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M84.1431 20.6951C84.4493 20.5218 84.6214 20.1946 84.6214 19.848V17.5571C84.6214 17.2106 84.4301 16.8833 84.1431 16.7101L76.0884 12.0128C75.7823 11.8395 75.4188 11.8395 75.1127 12.0128L67.0006 16.7293C66.6945 16.9026 66.5032 17.2299 66.5032 17.5764V26.9903C66.5032 27.3368 66.6945 27.6641 67.0006 27.8373L75.0553 32.4576C75.3614 32.6309 75.7249 32.6309 76.0119 32.4576L80.8906 29.724C81.0437 29.647 81.1394 29.4737 81.1394 29.3004C81.1394 29.1272 81.0437 28.9539 80.8906 28.8769L72.7403 24.1603C72.5872 24.0641 72.4916 23.9101 72.4916 23.7368V20.7914C72.4916 20.6181 72.5872 20.4448 72.7403 20.3678L75.2849 18.9047C75.438 18.8085 75.6293 18.8085 75.7823 18.9047L78.3269 20.3678C78.48 20.4641 78.5756 20.6181 78.5756 20.7914V23.1015C78.5756 23.2748 78.6713 23.448 78.8244 23.525C78.9774 23.6213 79.1687 23.6213 79.3218 23.525L84.1431 20.6951Z" fill="#333333"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M75.4764 20.2525C75.5338 20.214 75.6104 20.214 75.6678 20.2525L77.2175 21.1573C77.2749 21.1958 77.3131 21.2536 77.3131 21.3306V23.1402C77.3131 23.2172 77.2749 23.275 77.2175 23.3135L75.6678 24.2183C75.6104 24.2568 75.5338 24.2568 75.4764 24.2183L73.9267 23.3135C73.8693 23.275 73.8311 23.2172 73.8311 23.1402V21.3306C73.8311 21.2536 73.8693 21.1958 73.9267 21.1573L75.4764 20.2525Z" fill="#5FA04E"></path><path d="M31.7207 12.0513C31.4145 11.8781 31.051 11.8781 30.7449 12.0513L22.6902 16.7294C22.3841 16.9027 22.2119 17.2299 22.2119 17.5765V26.9518C22.2119 27.2984 22.4032 27.6256 22.6902 27.7989L30.7449 32.477C31.051 32.6502 31.4145 32.6502 31.7207 32.477L39.7753 27.7989C40.0815 27.6256 40.2536 27.2984 40.2536 26.9518V17.5765C40.2536 17.2299 40.0623 16.9027 39.7753 16.7294L31.7207 12.0513Z" fill="url(#nodejs-logo-light-mode_svg__paint0_linear_8323_10808)"></path><path d="M39.7945 16.7294L31.7016 12.0513C31.625 12.0128 31.5294 11.9743 31.4528 11.9551L22.3842 27.5679C22.4607 27.6641 22.5563 27.7411 22.652 27.7989L30.745 32.477C30.9745 32.6117 31.2424 32.6502 31.4911 32.5732L40.005 16.9027C39.9476 16.8257 39.871 16.7679 39.7945 16.7294Z" fill="url(#nodejs-logo-light-mode_svg__paint1_linear_8323_10808)"></path><path d="M39.7947 27.7986C40.0243 27.6638 40.1965 27.4328 40.273 27.1825L31.4147 11.9355C31.1852 11.897 30.9364 11.9162 30.726 12.051L22.6904 16.7098L31.3573 32.6114C31.4721 32.5921 31.6061 32.5536 31.7209 32.4959L39.7947 27.7986Z" fill="url(#nodejs-logo-light-mode_svg__paint2_linear_8323_10808)"></path></g><defs><linearGradient id="nodejs-logo-light-mode_svg__paint0_linear_8323_10808" x1="34.5132" y1="15.5354" x2="27.1574" y2="30.4484" gradientUnits="userSpaceOnUse"><stop stop-color="#3F873F"></stop><stop offset="0.3296" stop-color="#3F8B3D"></stop><stop offset="0.6367" stop-color="#3E9638"></stop><stop offset="0.9341" stop-color="#3DA92E"></stop><stop offset="1" stop-color="#3DAE2B"></stop></linearGradient><linearGradient id="nodejs-logo-light-mode_svg__paint1_linear_8323_10808" x1="30.0087" y1="23.3589" x2="50.5327" y2="8.28841" gradientUnits="userSpaceOnUse"><stop offset="0.1376" stop-color="#3F873F"></stop><stop offset="0.4016" stop-color="#52A044"></stop><stop offset="0.7129" stop-color="#64B749"></stop><stop offset="0.9081" stop-color="#6ABF4B"></stop></linearGradient><linearGradient id="nodejs-logo-light-mode_svg__paint2_linear_8323_10808" x1="21.9168" y1="22.2608" x2="40.5549" y2="22.2608" gradientUnits="userSpaceOnUse"><stop offset="0.0919165" stop-color="#6ABF4B"></stop><stop offset="0.2871" stop-color="#64B749"></stop><stop offset="0.5984" stop-color="#52A044"></stop><stop offset="0.8624" stop-color="#3F873F"></stop></linearGradient><clipPath id="nodejs-logo-light-mode_svg__clip0_8323_10808"><rect width="111" height="33" fill="white"></rect></clipPath></defs></svg> -->
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
+					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
+						alt="" height="300">
+				</a>
+				<p class="react-logo">React</p>
+			</section>
 
-	<body>
 
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<a href="https://nodejs.org/en/">
-						<!-- <img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"> -->
-						<svg style="height: 180px; margin: 0 auto 4rem auto; background: transparent;"" viewBox="0 0 111 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="light-mode-only"><g clip-path="url(#nodejs-logo-light-mode_svg__clip0_8323_10808)"><path d="M97.6894 32.7407C97.4024 32.7407 97.1345 32.6637 96.8858 32.5289L94.3412 31.0081C93.9586 30.7963 94.1499 30.7193 94.2647 30.6808C94.7813 30.5075 94.8769 30.469 95.4126 30.161C95.47 30.1225 95.5466 30.1418 95.604 30.1803L97.5555 31.3546C97.632 31.3931 97.7276 31.3931 97.785 31.3546L105.419 26.9075C105.495 26.869 105.534 26.792 105.534 26.6958V17.8209C105.534 17.7247 105.495 17.6477 105.419 17.6092L97.785 13.1814C97.7085 13.1429 97.6128 13.1429 97.5555 13.1814L89.9217 17.6092C89.8451 17.6477 89.8069 17.7439 89.8069 17.8209V26.6958C89.8069 26.7728 89.8451 26.869 89.9217 26.9075L92.0071 28.1204C93.1359 28.6979 93.8438 28.0241 93.8438 27.3503V18.591C93.8438 18.4755 93.9394 18.36 94.0734 18.36H95.0491C95.1639 18.36 95.2787 18.4562 95.2787 18.591V27.3503C95.2787 28.8712 94.456 29.7567 93.0211 29.7567C92.5811 29.7567 92.2367 29.7567 91.2609 29.2755L89.252 28.1204C88.7546 27.8316 88.4485 27.2926 88.4485 26.715V17.8402C88.4485 17.2626 88.7546 16.7236 89.252 16.4348L96.8858 11.9878C97.3641 11.7183 98.0146 11.7183 98.4929 11.9878L106.127 16.4348C106.624 16.7236 106.93 17.2626 106.93 17.8402V26.715C106.93 27.2926 106.624 27.8316 106.127 28.1204L98.4929 32.5674C98.2633 32.6637 97.9764 32.7407 97.6894 32.7407Z" fill="#5FA04E"></path><path d="M100.062 26.6379C96.7134 26.6379 96.0247 25.0978 96.0247 23.7887C96.0247 23.6732 96.1203 23.5577 96.2542 23.5577H97.2491C97.3639 23.5577 97.4596 23.6347 97.4596 23.7502C97.6126 24.7705 98.0527 25.2711 100.081 25.2711C101.688 25.2711 102.377 24.9053 102.377 24.039C102.377 23.5385 102.185 23.1727 99.6789 22.9224C97.5935 22.7106 96.2925 22.2486 96.2925 20.5737C96.2925 19.0144 97.5935 18.0903 99.7746 18.0903C102.224 18.0903 103.429 18.9374 103.582 20.7855C103.582 20.8433 103.563 20.901 103.525 20.9588C103.486 20.9973 103.429 21.0358 103.371 21.0358H102.357C102.262 21.0358 102.166 20.9588 102.147 20.8625C101.917 19.8037 101.324 19.4572 99.7555 19.4572C97.9953 19.4572 97.7848 20.0732 97.7848 20.5352C97.7848 21.0935 98.0335 21.2668 100.406 21.5748C102.759 21.8828 103.869 22.3256 103.869 23.9812C103.869 25.6753 102.472 26.6379 100.062 26.6379Z" fill="#5FA04E"></path><path d="M111.083 17.3202C111.083 18.1288 110.413 18.8026 109.609 18.8026C108.806 18.8026 108.136 18.148 108.136 17.3202C108.136 16.4732 108.825 15.8379 109.609 15.8379C110.394 15.8379 111.083 16.4924 111.083 17.3202ZM108.366 17.3202C108.366 18.0133 108.921 18.5716 109.59 18.5716C110.279 18.5716 110.834 17.994 110.834 17.3202C110.834 16.6272 110.279 16.0882 109.59 16.0882C108.94 16.0882 108.366 16.6272 108.366 17.3202ZM109.055 16.4924H109.629C109.82 16.4924 110.203 16.4924 110.203 16.9352C110.203 17.2432 110.011 17.301 109.896 17.3395C110.126 17.3587 110.145 17.5128 110.164 17.7245C110.183 17.8593 110.203 18.0903 110.241 18.1673H109.896C109.896 18.0903 109.839 17.6668 109.839 17.6475C109.82 17.5513 109.782 17.5128 109.667 17.5128H109.38V18.1865H109.055V16.4924ZM109.361 17.224H109.609C109.82 17.224 109.858 17.07 109.858 16.993C109.858 16.762 109.705 16.762 109.609 16.762H109.342V17.224H109.361Z" fill="#5FA04E"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M18.1565 17.4415C18.1565 17.095 17.9652 16.7678 17.6591 16.5945L9.56614 11.8779C9.43221 11.8009 9.27915 11.7624 9.12609 11.7432C9.10696 11.7432 9.04956 11.7432 9.04956 11.7432C8.89651 11.7432 8.74345 11.8009 8.60952 11.8779L0.497439 16.5752C0.191323 16.7485 0 17.0758 0 17.4415L0.0191323 30.0704C0.0191323 30.2437 0.114794 30.4169 0.267852 30.4939C0.42091 30.5902 0.612233 30.5902 0.746159 30.4939L5.56749 27.7217C5.87361 27.5485 6.06493 27.2212 6.06493 26.8747V20.9645C6.06493 20.618 6.25625 20.2907 6.56237 20.1175L8.60952 18.9239C8.76258 18.8276 8.93477 18.7891 9.10696 18.7891C9.27915 18.7891 9.45134 18.8276 9.58527 18.9239L11.6324 20.1175C11.9385 20.2907 12.1299 20.618 12.1299 20.9645V26.8747C12.1299 27.2212 12.3212 27.5485 12.6273 27.7217L17.4104 30.4939C17.5634 30.5902 17.7547 30.5902 17.9078 30.4939C18.0609 30.4169 18.1565 30.2437 18.1565 30.0704V17.4415Z" fill="#333333"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M57.1482 0.0577539C56.9951 -0.0192513 56.8038 -0.0192513 56.6698 0.0577539C56.5168 0.15401 56.4211 0.308021 56.4211 0.481283V12.9946C56.4211 13.1101 56.3637 13.2256 56.2489 13.3027C56.1341 13.3604 56.0194 13.3604 55.9046 13.3027L53.8765 12.1283C53.5704 11.9551 53.2069 11.9551 52.9008 12.1283L44.7887 16.8449C44.4826 17.0182 44.2913 17.3454 44.2913 17.6919V27.1058C44.2913 27.4524 44.4826 27.7796 44.7887 27.9529L52.9008 32.6695C53.2069 32.8427 53.5704 32.8427 53.8765 32.6695L61.9886 27.9529C62.2947 27.7796 62.4861 27.4524 62.4861 27.1058V3.6385C62.4861 3.27272 62.2947 2.94545 61.9886 2.77219L57.1482 0.0577539ZM56.402 24.0064C56.402 24.1026 56.3637 24.1796 56.2872 24.2181L53.513 25.8353C53.4365 25.8738 53.3408 25.8738 53.2643 25.8353L50.4901 24.2181C50.4136 24.1796 50.3753 24.0834 50.3753 24.0064V20.7722C50.3753 20.6759 50.4136 20.5989 50.4901 20.5604L53.2643 18.9433C53.3408 18.9048 53.4365 18.9048 53.513 18.9433L56.2872 20.5604C56.3637 20.5989 56.402 20.6952 56.402 20.7722V24.0064Z" fill="#333333"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M84.1431 20.6951C84.4493 20.5218 84.6214 20.1946 84.6214 19.848V17.5571C84.6214 17.2106 84.4301 16.8833 84.1431 16.7101L76.0884 12.0128C75.7823 11.8395 75.4188 11.8395 75.1127 12.0128L67.0006 16.7293C66.6945 16.9026 66.5032 17.2299 66.5032 17.5764V26.9903C66.5032 27.3368 66.6945 27.6641 67.0006 27.8373L75.0553 32.4576C75.3614 32.6309 75.7249 32.6309 76.0119 32.4576L80.8906 29.724C81.0437 29.647 81.1394 29.4737 81.1394 29.3004C81.1394 29.1272 81.0437 28.9539 80.8906 28.8769L72.7403 24.1603C72.5872 24.0641 72.4916 23.9101 72.4916 23.7368V20.7914C72.4916 20.6181 72.5872 20.4448 72.7403 20.3678L75.2849 18.9047C75.438 18.8085 75.6293 18.8085 75.7823 18.9047L78.3269 20.3678C78.48 20.4641 78.5756 20.6181 78.5756 20.7914V23.1015C78.5756 23.2748 78.6713 23.448 78.8244 23.525C78.9774 23.6213 79.1687 23.6213 79.3218 23.525L84.1431 20.6951Z" fill="#333333"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M75.4764 20.2525C75.5338 20.214 75.6104 20.214 75.6678 20.2525L77.2175 21.1573C77.2749 21.1958 77.3131 21.2536 77.3131 21.3306V23.1402C77.3131 23.2172 77.2749 23.275 77.2175 23.3135L75.6678 24.2183C75.6104 24.2568 75.5338 24.2568 75.4764 24.2183L73.9267 23.3135C73.8693 23.275 73.8311 23.2172 73.8311 23.1402V21.3306C73.8311 21.2536 73.8693 21.1958 73.9267 21.1573L75.4764 20.2525Z" fill="#5FA04E"></path><path d="M31.7207 12.0513C31.4145 11.8781 31.051 11.8781 30.7449 12.0513L22.6902 16.7294C22.3841 16.9027 22.2119 17.2299 22.2119 17.5765V26.9518C22.2119 27.2984 22.4032 27.6256 22.6902 27.7989L30.7449 32.477C31.051 32.6502 31.4145 32.6502 31.7207 32.477L39.7753 27.7989C40.0815 27.6256 40.2536 27.2984 40.2536 26.9518V17.5765C40.2536 17.2299 40.0623 16.9027 39.7753 16.7294L31.7207 12.0513Z" fill="url(#nodejs-logo-light-mode_svg__paint0_linear_8323_10808)"></path><path d="M39.7945 16.7294L31.7016 12.0513C31.625 12.0128 31.5294 11.9743 31.4528 11.9551L22.3842 27.5679C22.4607 27.6641 22.5563 27.7411 22.652 27.7989L30.745 32.477C30.9745 32.6117 31.2424 32.6502 31.4911 32.5732L40.005 16.9027C39.9476 16.8257 39.871 16.7679 39.7945 16.7294Z" fill="url(#nodejs-logo-light-mode_svg__paint1_linear_8323_10808)"></path><path d="M39.7947 27.7986C40.0243 27.6638 40.1965 27.4328 40.273 27.1825L31.4147 11.9355C31.1852 11.897 30.9364 11.9162 30.726 12.051L22.6904 16.7098L31.3573 32.6114C31.4721 32.5921 31.6061 32.5536 31.7209 32.4959L39.7947 27.7986Z" fill="url(#nodejs-logo-light-mode_svg__paint2_linear_8323_10808)"></path></g><defs><linearGradient id="nodejs-logo-light-mode_svg__paint0_linear_8323_10808" x1="34.5132" y1="15.5354" x2="27.1574" y2="30.4484" gradientUnits="userSpaceOnUse"><stop stop-color="#3F873F"></stop><stop offset="0.3296" stop-color="#3F8B3D"></stop><stop offset="0.6367" stop-color="#3E9638"></stop><stop offset="0.9341" stop-color="#3DA92E"></stop><stop offset="1" stop-color="#3DAE2B"></stop></linearGradient><linearGradient id="nodejs-logo-light-mode_svg__paint1_linear_8323_10808" x1="30.0087" y1="23.3589" x2="50.5327" y2="8.28841" gradientUnits="userSpaceOnUse"><stop offset="0.1376" stop-color="#3F873F"></stop><stop offset="0.4016" stop-color="#52A044"></stop><stop offset="0.7129" stop-color="#64B749"></stop><stop offset="0.9081" stop-color="#6ABF4B"></stop></linearGradient><linearGradient id="nodejs-logo-light-mode_svg__paint2_linear_8323_10808" x1="21.9168" y1="22.2608" x2="40.5549" y2="22.2608" gradientUnits="userSpaceOnUse"><stop offset="0.0919165" stop-color="#6ABF4B"></stop><stop offset="0.2871" stop-color="#64B749"></stop><stop offset="0.5984" stop-color="#52A044"></stop><stop offset="0.8624" stop-color="#3F873F"></stop></linearGradient><clipPath id="nodejs-logo-light-mode_svg__clip0_8323_10808"><rect width="111" height="33" fill="white"></rect></clipPath></defs></svg>
-					</a>
-				
-					<p>
-						<small>Created by Ryan Dahl </small>
-					</p>
-				</section>
-
-				<!-- <section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section> -->
-				<section>
+			<section>
+				<section data-auto-animate>
 					<h2>Contenido de la clase</h2>
-				
 				</section>
 
-				<!-- Creacion e instalacion del entorno -->
-
-				<section>
-					<section>
-						<h4>Creación del entorno e instalación de las herramientas</h4>
-						<ol>
-							<li>Introducción a Nodejs</li>
-							<li>Introducción a GIT</li>
-							<li>Creación del Proyecto</li>
-						</ol>
-					</section>
-					<section>
-						<h4>Introducción a Nodejs</h4>
-						<ol>
-							<li>Nodejs es un entorno que nos permite ejecutar JavaScript fuera del navegador</li>
-							<li>Código abierto y multiplataforma</li>
-							<li>Corre sobre V8 moto de Google Chrome implementado en C++</li>
-						</ol>
-					</section>
-					<section>
-						<h4>Introducción a Nodejs</h4>
-						<h6>Beneficios</h6>
-						<p>Aprender una vez y utilizar siempre</p>
-					</section>
-					<section>
-						<h4>Introducción a Nodejs</h4>
-						<h6>Ejemplo de App</h6>
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							const http = require('http');
-
-							const hostname = '127.0.0.1';
-							const port = 3000;
-
-							const server = http.createServer((req, res) => {
-								res.statusCode = 200;
-								res.setHeader('Content-Type', 'text/plain');
-								res.end('Hello World\n');
-							})
-
-							server.listen(port, hostname, () => {
-								console.log(`Server running at http://${hostname}:${port}/`);
-							})
-						</code></pre>
-					</section>
-					<section>
-						<h4>Introducción a Nodejs</h4>
-						<h6>Cómo instalarlo</h6>
-					
-					</section>
-					<section>
-						<h4>Introducción a Nodejs</h4>
-						<h6>Diferencias con el navegador</h6>					
-					</section>
-					<section>
-						<h4>Introducción a Nodejs</h4>
-						<h6>NPM</h6>					
-					</section>
-					<section>
-						<h4>Introducción a GIT</h4>
-						<ul>
-							<li>Controlador de versiones</li>
-							<li>Cambios en los archivos</li>
-						</ul>
-					</section>
-					<section>
-						<h4>Principales Comandos</h4>
-						<ul>
-							<li>git remote add _remote_addr_</li>
-							<li>git pull</li>
-							<li>git add _filename_</li>
-							<li>git commit -m "Mensaje"</li>
-							<li>git push</li>
-							<li>git clone _repository_name_</li>
-						</ul>
-					</section>
-					<section>
-						<h4>Creación del Proyecto</h4>
-						<ol>
-							<li>Crear carpeta</li>
-							<li>Npm init</li>
-							<li>Git init</li>
-						</ol>
-					</section>
-				</section>				
-
-				<section>
-					<section>
-						<h4>ECMASCRIPT 6 (2015)</h4>
-						<ol>
-							<li>Uso de let, const, spread y desestructuración</li>
-							<li>Arrow functions</li>
-							<li>Try catch</li>
-						</ol>
-					</section>
-					
-					<section>
-						<h2>ECMASCRIPT </h2>
-						<p>
-							Estándar que utiliza JS, o sea especificación y como el lenguaje debe funcionar
-						</p>
-					</section>
-					<section>
-						<h2>ECMAScript 6 </h2>
-						<p>
-							Segunda mayor versión de JS
-						</p>
-					</section>
-					<section>
-						<h2>Qué incorpora al lenguaje</h2>		
-
-					</section>
-					<section>
-						<h2>Uso de let, const</h2>
-						<ul>
-							<li>let: puede ser re-asignada, pero no re-declarada</li>
-							<li>const: no puede ser re-declarada, ni re-asignada</li>
-					
-						</ul>
-						
-					</section>
-					<section>
-						<section data-auto-animate>
-							<h2 data-id="code-title">Uso de let, const</h2>
-							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-								let a = 6;
-								a = 5;
-								console.log(a);
-							</code></pre>
-							
-						</section>
-						<section data-auto-animate>
-							<h2 data-id="code-title"></h2>
-							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-								let a = 6;
-								let a = 5;
-								// error
-							</code></pre>
-
-							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-								const a = 6;
-								const b;  // error
-							</code></pre>
-
-							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-								const user = {name: "Rose", last_name: "Ocana"};
-								user.name = "John";  
-								user.last_name = "Doe";  
-
-								console.log(user); // {name: "John", last_name: "Doe"}
-							</code></pre>
-					
-						</section>
-				
-					</section>
-
-					<!-- <p>Desestructuración</p> -->
-
-					<section>
-						<h2>Desestructuración</h2>
-						<p>
-							La desestructuración de objetos implica extraer las propiedades de un objeto en variables.
-						</p>
-					</section>
-
-					<section>
-						<h2>Desestructuración</h2>
-						<h6>Sintaxis</h6>
-					
-					</section>
-				
-						
-					<section data-auto-animate>
-						<h2>Desestructuración</h2>
-				
-
-						<div class=" justify-center" style="display: flex; flex-direction: row;">
-							<div style="width: 100%;">
-								<h6>Ahora</h6>
-								<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-									const objeto = { 
-										prop1: "valor1",
-										prop2: "valor2",
-										... 
-									} 
-									const { prop1, prop2 } = objeto;
-
-									console.log(prop1); // valor1
-									console.log(prop2); // valor2
-								</code></pre>
-							</div>
-							<div style="width: 100%;">
-								<h6>Antes</h6>
-								<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-									var usuario = { nombre: "Andres", edad: 23};
-
-									var nombre = usuario.nombre;
-									var edad = usuario.edad;
-								
-								</code></pre>
-							</div>
-						</div>	
-					</section>
-					
-					<!-- <p>Operadores de Propagacion</p> -->
-
-					<section>
-						<h2>Operadores de propagación</h2>
-						<ul>
-							<li>Propagar los elementos de un iterable</li>
-							<li>Utilizable en Array, Strings y Objetos</li>
-						</ul>	
-					</section>
-					
-					<section data-auto-animate>
-						<h2>Operadores de propagación</h2>
-						<h6 data-id="code-title">Strings</h>
-						
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							const array = [ ..."Hola"];    // [ 'H', 'o', 'l', 'a' ]
-						</code></pre>
-					</section>
-					
-					<section data-auto-animate>
-						<h2 data-id="code-title">Operadores de propagación</h2>
-						<h6>Copiar Array</h6>
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							let originalArray = [1, 2, 3, 4, 5];
-							let copyArray = [...originalArray];
-
-							console.log(originalArray); // [1, 2, 3, 4, 5]
-							console.log(copyArray); // [1, 2, 3, 4, 5]
-						</code></pre>
-					</section>
-
-					<!-- <p>Parámetro rest</p> -->
-					
-					<section>
-						<h2>Parámetro rest</h2>
-						<p>
-							El parámetro rest consiste en agrupar el residuo de elementos mediante la sintaxis de tres puntos (...) seguido de una variable que contendrá los elementos en un array.
-						</p>
-						
-					</section>
-					<section>
-						<h2>Parámetro rest</h2>
-						<p>
-							Esta característica sirve para crear funciones que acepten cualquier número de argumentos para agruparlos en un array.
-						</p>
-						
-					</section>
-					
-					<section data-auto-animate>
-						<h2 data-id="code-title">Parámetro rest</h2>
-					
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							function hola (primero, segundo, ...resto) {
-								console.log(primero, segundo);  // 1 2
-								console.log(resto); // [3,4,5,6]
-							}
-							  
-							hola(1,2,3,4,5);
-						</code></pre>
-					</section>
-					
-					<section data-auto-animate>
-						<h3 data-id="code-title">También sirve para obtener los elementos restantes de un array</h3>
-						
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							const array = [0,1,2,3,4,5];
-							const [cero, ...positivos] = array;
-							positivos // [ 1, 2, 3, 4, 5 ]
-						</code></pre>
-					</section>
-
-					<section>
-						<h2>Parámetro rest</h2>
-						<ul>
-							<i>Siempre deberá estar en la última posición de los parámetros</i>
-						</p>
-						
-					</section>
-
-					<section data-auto-animate>
-						<h2 data-id="code-title">Mal</h2>
-						
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							function hola (primero, ...rest, ultimo) { 
-								...
-							}
-						</code></pre>
-					</section>
-
-					<!-- <p>Arrow functions</p> -->
-
-					<section>
-						<h2>Arrow functions</h2>
-						<p>Función con la siguiente estructura:</p>
-
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							function nombre (parámetros) {
-								return valorRetornado;
-							}
-						</code></pre>
-
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							const nombre = (parámetros) => {
-								return valorRetornado;
-							}
-						</code></pre>
-						
-					</section>
-					<section>
-						<h2>Arrow functions</h2>
-						<p>Omitir paréntesis en las funciones flecha si existe un solo parámetro</p>
-
-							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-								const nombre = elem => {
-									return valorRetornado;
-								}
-							</code></pre>
-
-					</section>
-					<section>
-						<h2>Arrow functions</h2>
-						<p>Las funciones flecha tienen un retorno implícito, es decir, se puede omitir la palabra reservada return, para que el código sea escrito en una sola línea.</p>
-
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							function suma (num1, num2) {
-								return num1 + num2;
-							}
-						</code></pre>
-						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							const suma = (num1, num2) => num1 + num2;
-						</code></pre>
-
-					</section>
-
-					<section>
-						<h2>Arrow functions</h2>
-						<h6>No pueden ser usadas en todos los contextos.</h6>
-
-						<ul>
-							<li>No pueden ser usadas como métodos</li>
-							<li>No hay <code>this</code>, <code>arguments</code> o <code>super</code></li>
-							<li>No se puede usar con <code>call</code>, <code>apply</code> y <code>bind</code> que son temas que utilizan <code>scope</code></li>
-							<li >No se pueden con <code>yield</code></li>
-						</ul>
-
-					</section>
-
-
-					<!-- <section>
-						<h2>Módulos, export, import</h2>
-					
-						
-					</section> -->
-				</section>
-
-
-				<!-- Asincronimso en JS -->
-
-				<section>
-					<h4>Asincronismo en JS</h4>
+				<section data-auto-animate>
+					<h2>Contenido de la clase</h2>
 					<ol>
-						<li class="fragment">Event Loop</li>					
-						<li class="fragment">Callbacks</li>
-						<li class="fragment">Fetch</li>
-						<li class="fragment">Promesas</li>
-						<li class="fragment">Async/Await</li>
+						<li>¿Qué es React?</li>
+						<li>Instalación y creación del proyecto</li>
+						<li>Ejemplo</li>
+						<li>JSX</li>
+						<li>Componentes</li>
 					</ol>
 				</section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Asincronismo en JS</h2>
-					<p>
-						JavaScript es un lenguaje de programación asíncrono y no bloqueante, con un bucle de eventos (concurrencia), implementado con un único hilo para sus interfaces de I/O.
-					</p>
+				<section data-auto-animate>
+					<h2>Contenido de la clase</h2>
+					<ol start="5">
+						<li>Estados y Ciclos de Vida</li>
+						<li>Manejando Eventos</li>
+						<li class="italic">Conditional rendering</li>
+						<li>CSS en React</li>
+						<li>Persistencia de Datos con el LocalStorage</li>
+					</ol>
 				</section>
 
+			</section>
 
+			<section>
 				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Asíncrono</h6>
-
-					<p>Al ejecutar código JavaScript el hilo de ejecución continuará a pesar de encontrarse en situaciones en las que no obtenga un resultado inmediatamente.</p>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>No bloqueante</h6>
-
-					<p>Una tarea devuelve inmediatamente el control  para poder continuar sin necesidad de ternimar la app.</p>
+					<h2>¿Qué es React?</h2>
 				</section>
 
 				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Concurrencia</h6>
+					<p class="react-logo">React</p>
+					<p>Biblioteca JavaScript para construir interfaces de usuario, a partir de pequeñas piezas de código
+						llamadas componentes</p>
+				</section>
+				<section>
+					<p class="react-logo">React</p>
+					<p>Biblioteca progresiva</p>
+				</section>
+			</section>
+
+			<section>
+				<section data-auto-animate>
+					<h3>Instalación y creación del proyecto</h3>
+				</section>
+				<section data-auto-animate>
+					<h3>Instalación y creación del proyecto</h3>
+					<p>npx creat-react-app nombre-mi-app</p>
+				</section>
+
+				<section>
+					<h3>Bibliotecas instaladas</h3>
+					<ul>
+						<li>react</li>
+						<li>react-dom</li>
+						<li>react-scripts</li>
+						<li>cra-template</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Estructura de la carpeta creada</h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						├── node_modules
+						├── public
+						│	└── index.html	
+						└── src/
+							├── App.css
+							├── App.js
+							├── App.test.js
+							├── index.css
+							└── index.js
+						</code></pre>
+				</section>
+
+				<section>
+					<h3>Archivo public/index.js</h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|13>
+						
+							<!DOCTYPE html>
+								<html lang="en">
+								<head>
+									<meta charset="utf-8" />
+									<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+									<meta name="viewport" content="width=device-width, initial-scale=1" />
+									<meta name="theme-color" content="#000000" />
+									<meta
+									name="description"
+									content="Web site created using create-react-app"
+									/>
+									<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+									<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+						
+									<title>React App</title>
+								</head>
+								<body>
+									<noscript>You need to enable JavaScript to run this app.</noscript>
+									<div id="root"></div>
+								</body>
+								</html>
+							</script>
+						</code></pre>
+				</section>
+
+				<section>
+					<h3>Archivo src/index.js</h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|13>
+						<script type="text/template">
+							import React from 'react';
+							import ReactDOM from 'react-dom/client';
+							import './index.css';
+							import App from './App';
+
+							const root = ReactDOM.createRoot(document.getElementById('root'));
+							root.render(
+								<React.StrictMode>
+									<App />
+								</React.StrictMode>
+							);
+						</script>
+					</code></pre>
+				</section>
+
+
+				<section data-auto-animate>
+					<h2>Iniciar servidor</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Iniciar servidor</h2>
+					<p>npm start</p>
+				</section>
+
+				<section>
+					<h3>Agregos a la estructura</h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							└── src/
+								├── assets/
+								│   ├── img/
+								│       └── foto.jpg
+								│   ├── fonts/
+								│       └──ubuntu.woff2
+								├── components/
+								│   ├── Avatar/
+								│   ├── LoginButton/
+								├── context/
+								│   ├── UserContext.js
+								├── hooks/
+								│   ├── useLocalStorage.js
+								├── utils/
+								│   ├── api.js
+						</code></pre>
+				</section>
+				<section data-auto-animate>
+					<h2>Construir</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Construir</h2>
+					<p>npm run build</p>
+				</section>
+
+			</section>
+
+			<section>
+				<h3>Ejemplo</h3>
+				<div style="display: inline-block;">
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|4|6-20|23>
+							import './App.css';
+							import React from 'react';
 	
-					<p>Utiliza un modelo de concurrencia basado en un "loop de eventos".</p>
-					
-				</section>
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Ejemplo</h6>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						// Usando función anonima
-						console.log('A');
-						setTimeout(function () {
-							console.log('B');
-						}, 2000)
-						console.log('C');
-						/* Resultado del código anterior
-						 A
-						 C
-						 B  Despues de 2 segundo */
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Preguntas</h6>
-
-					<p class="fragment">¿Quién maneja este mecanismo?</p>
-					<p class="fragment">¿Cómo saber que ejecutar cuando tengamos el resultado esperado?</p>
-				
-				</section>
-
-				
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Asincronismo en JS</h2>
-					<h5>Callbacks</h5>
-					<p>
-						Un callback es simplemente una función que se pasa como parámetro a otra función.
-					</p>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Callbacks -> Ejemplo</h6>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						setTimeout(function(){
-							console.log('Hola');
-						}, 2000);
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Callbacks -> Ejemplo</h6>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						function doStep1(init) {
-							return init + 1;
-						}
-						  
-						function doStep2(init) {
-							return init + 2;
-						}
-						  
-						function doStep3(init) {
-							return init + 3;
-						}
-						  
-						function doOperation() {
-							let result = 0;
-							result = doStep1(result);
-							result = doStep2(result);
-							result = doStep3(result);
-							console.log(`result: ${result}`);
-						}
-						doOperation();
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Callbacks -> Ejemplo</h6>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|26|16-17|1-4|18-23|6-9|19-21|11-13|20"><script type="text/template">
-						function doStep1(init, callback) {
-							const result = init + 1;
-							callback(result);
-						}
-						
-						function doStep2(init, callback) {
-							const result = init + 2;
-							callback(result);
-						}
-						
-						function doStep3(init, callback) {
-							const result = init + 3;
-							callback(result);
-						}
-						
-						function doOperation() {
-							doStep1(0, (result1) => {
-								doStep2(result1, (result2) => {
-									doStep3(result2, (result3) => {
-										console.log(`result: ${result3}`);
-									});
-								});
-							});
-						}
-						  
-						doOperation();
-					</script></code></pre>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Callbacks -> Desventajas</h6>
-					<ul>
-						<li> Hay que manejar los errores en cada llamado</li>
-						<li> Complejo de leer</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Callbacks -> Que imprime y en qué orden</h6>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|2|6|4-5|10"><script type="text/template">
-						// Usando función anonima
-						console.log('A');
-						setTimeout(function () {
-							console.log('B');
-						}, 2000)
-						console.log('C');
-						/* Resultado del código anterior
-						 A
-						 C
-						 B  Despues de 2 segundo */
-					</script></code></pre>
-				</section>
-
-				<!-- Event Loop -->
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<p>Por qué sucede esto?</p>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Asincronismo en JS</h2>
-					<h5>Event Loop</h5>
-					<p>
-						Bucle que distribuye y maneja los eventos. Espera y distribuye eventos o mensajes en un programa.
-					</p>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h5>Alrededor del event Loop</h5>
-					<ul>
-						<li>Memory Heap</li>
-						<li>Call Stack</li>
-						<li>Task Queue</li>
-						<li>Wep APIS (En el caso de Nodejs C++)</li>
-					</ul>
-				</section>
-
-				<!-- Event Loop -->
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h5>Event Loop</h5>
-					<img class="r-frame" style="background: rgba(255,255,255,0.1);"  width="600" height="500" data-src="dist/event_loop.png" alt="Down arrow">
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h5>Alrededor del event Loop</h5>
-					<a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank">
-						Ver programa ilustrativo
-					</a>
-				</section>
-
-				<!-- Promesas -->
-
-
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Asincronismo en JS</h2>
-					<h5>Promesas</h5>
-					<p>
-						La función asíncrona comienza la operación y devuelve un objeto al que se le adjutan los controladores a esta promesa, que serán ejecutados cuando la promesa sea resuelta o falle
-					</p>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Promesas -> Estructura</h6>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						const myPromise = new Promise((resolve, reject) => {
-							setTimeout(() => {
-								resolve("foo");
-							}, 300);
-						});
-						
-						myPromise
-							.then(handleFulfilledA, handleRejectedA)
-							.then(handleFulfilledB, handleRejectedB)
-							.then(handleFulfilledC, handleRejectedC);
-					</code></pre>
-				
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Promesas -> Ejemplos</h6>
-					
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|1|3|12|9|5-7|14"><script type="text/template">
-						const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-
-						console.log(fetchPromise);
-					
-						fetchPromise.then((response) => {
-							console.log(`Received response: ${response.status}`);
-						});
-					
-						console.log("Started request…");
-					
-						//
-							Promise { <state>: "pending" }
-							Started request…
-							Received response: 200
-						//
-					</script></code></pre>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					
-					<h6>Promesas -> Encadenamiento de Promesas</h6>
-					
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers><script type="text/template">
-						fetchPromise.then((response) => {
-							const jsonPromise = response.json();
-								jsonPromise.then((data) => {
-									console.log(data[0].name);
-								});
-							});
+							class App extends React.Component {
 							
-					</script></code></pre>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers><script type="text/template">
-						fetchPromise
-							.then((response) => response.json())
-							.then((data) => {
-								console.log(data[0].name);
-							});
-							
-					</script></code></pre>
-				
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Promesas -> Errores</h6>
-				
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers><script type="text/template">
-						const fetchPromise = fetch('bad-scheme://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-
-						fetchPromise
-						.then((response) => {
-							if (!response.ok) {
-								throw new Error(`HTTP error: ${response.status}`);
-							}
-							return response.json();
-						})
-						.then((data) => {
-							console.log(data[0].name);
-						})
-						.catch((error) => {
-							console.error(`Could not get products: ${error}`);
-						});
-
-							
-					</script></code></pre>
-					
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Qué imprime el programa y en qué orden</h6>
-					
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="|1|3|12|9|5-7|14"><script type="text/template">
-						const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-
-						console.log(fetchPromise);
-					
-						fetchPromise.then((response) => {
-							console.log(`Received response: ${response.status}`);
-						});
-					
-						console.log("Started request…");
-					
-						//
-							Promise { <state>: "pending" }
-							Started request…
-							Received response: 200
-						//
-					</script></code></pre>
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Ya sabemos por qué ocurre así</h6>
-					
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Async/Await</h6>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers><script type="text/template">
-						async function myFunction() {
-							// This is an async function
-						  }
-					</script></code></pre>
-					
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Async/Await</h6>
-					
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers><script type="text/template">
-						const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-
-						console.log(fetchPromise);
-					
-						fetchPromise.then((response) => {
-							console.log(`Received response: ${response.status}`);
-						});
-					
-						console.log("Started request…");
-					
-						//
-							Promise { <state>: "pending" }
-							Started request…
-							Received response: 200
-						//
-					</script></code></pre>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers><script type="text/template">
-						const fetchPromiseRes = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-						console.log(fetchPromiseRes);
-						console.log(`Received response: ${fetchPromiseRes.status}`);
-						console.log("Started request…");
-					</script></code></pre>
-
-					
-					
-				</section>
-
-				<section>
-					<h2>Asincronismo en JS</h2>
-					<h6>Async/Await -> Ejemplos</h6>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers><script type="text/template">
-						async function fetchProducts() {
-							try {
-								const response = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-								if (!response.ok) {
-									throw new Error(`HTTP error: ${response.status}`);
-								}
+								render () {
+									const user = {
+									name: "Rosa",
+									last_name: "Ocana"
+									};
 								
-								const data = await response.json();
-								console.log(data[0].name);
+									return (
+										<div className="App">
+											<header className="App-header">
+											<p>Nombre: {user.name}</p>
+											<p>Apellido: {user.last_name}</p>
+											</header>
+										</div>
+									);
+								}
 							}
-							catch (error) {
-									console.error(`Could not get products: ${error}`);
+	
+							export default App;
+						</code></pre>
+
+				</div>
+				<div style="display: inline-block;" class="fragment fade-down">
+					<img src="dist/example1.jpg" alt="" height="300">
+				</div>
+			</section>
+
+			<section>
+				<h2>Ejemplo</h2>
+
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|18>
+						<script type="text/template">
+						import './App.css';
+						import React from 'react';
+
+						class App extends React.Component {
+						
+							render () {
+								const user = {
+								name: "Rosa",
+								last_name: "Ocana",
+								age: 22,
+								};
+							
+								return (
+									<div className="App">
+										<header className="App-header">
+											<p>Nombre: {user.name}</p>
+											<p>Apellido: {user.last_name}</p>
+											<p>Es mayor de edad: {user.age > 18 ? 'Si': 'No'}</p>
+										</header>
+									</div>
+								);
 							}
 						}
-						
-						const promise = fetchProducts();
-						promise.then((data) => console.log(data[0].name));
-						  
-					</script></code></pre>
-					
+
+						export default App;
+					</script>
+					</code></pre>
+			</section>
+
+			<!-- JSX-->
+			<section>
+				<section data-auto-animate>
+					<h2>JSX</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>JSX</h2>
+					<p>JSX es una extensión de JavaScript creada por Facebook para usarse con React.js</p>
+				</section>
+				<section data-auto-animate>
+					<h2>JSX</h2>
+					<p>JSX es una extensión de JavaScript creada por Facebook para usarse con React.js</p>
+					<p>Ventajas el trabajar con elementos y componentes muy similar a la sintaxis de HTML</p>
 				</section>
 
+				<section data-auto-animate>
+					<h2>JSX</h2>
+					<p>JSX es una extensión de JavaScript creada por Facebook para usarse con React.js</p>
+					<p>Ventajas el trabajar con elementos y componentes muy similar a la sintaxis de HTML</p>
+					<p>Nos permite incrustar <span class="italic">(embedding)</span> código JS en nuestro template</p>
+				</section>
 
-				<!-- Fin -->
+				<section>
+					<h2>Incrustar expresiones</h2>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const name = 'Josh Perez';
+							const element = <h1>Hello, {name}</h1>;
+						</code></pre>
+				</section>
+
+				<section>
+					<p>Podemos poner cualquier expresión JS dentro de paréntesis</p>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const user = {
+								name: "Rosa",
+								last_name: "Ocana",
+								age: 22,
+								};
+							const element = <p>Es mayor de edad: {user.age > 18 ? 'Si': 'No'}</p>
+						</code></pre>
+
+				</section>
+
+				<section>
+					<p>Especificar atributos</p>
+
+					<pre data-id="code-animation"><code class="hljs"  data-trim data-line-numbers>
+							<script type="text/template">
+								const element = <a href="https://www.reactjs.org"> link </a>;
 		
-				<section style="text-align: left;">
-					<h1>FIN</h1>
-					<p>
-						Muchas Gracias
-					</p>
+								const element = <img src={user.avatarUrl}></img>;
+							</script>
+						</code></pre>
+
 				</section>
+
+				<section>
+					<h3>¿Qué es una propiedad y qué es un atributo?</h3>
+
+				</section>
+
+				<section>
+					<h3>Los atributos los pueden tener las etiquetas de HTML</h3>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							<h1 class="titulo">Soy un título</h1>
+						</code></pre>
+				</section>
+
+				<section>
+					<h4>Las propiedades las pueden recibir los elementos y componentes de React </h4>
+
+					<div style="display: flex; flex-direction: row; justify-items: center;">
+						<div>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+									<script type="text/template">
+									const Component = () => {
+										return (
+											<h1 className="titulo">
+												Soy un titulo
+											</h1>
+										)
+									}
+									</script>
+								</code></pre>
+						</div>
+
+						<div>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+									<script type="text/template">
+									class Component extends React.Component {
 			
-			</div>
+										render () {
+											return (
+												<h1 className="titulo">
+													Soy un titulo
+												</h1>
+											)
+										}
+										
+									}
+								</script>
+								</code></pre>
+						</div>
+					</div>
+				</section>
 
+				<section>
+					<h3>JSX representa objetos </h3>
+
+					<div style="display: flex; flex-direction: row; justify-items: center;">
+						<div>
+							<h5>Esto</h5>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								<script type="text/template">
+									const element = (
+										<h1 className="greeting">
+										  Hello, world!
+										</h1>
+									);		
+								</script>	
+								</code></pre>
+						</div>
+
+						<div>
+							<h5>Es lo mismo que esto</h5>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								const element = React.createElement(
+									'h1',
+									{className: 'greeting'},
+									'Hello, world!'
+								);
+								</code> </pre>
+						</div>
+
+					</div>
+
+				</section>
+
+				<section>
+					<h3>JSX representa objetos </h3>
+
+
+					<h5>Que a su vez se parece a esto</h5>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const element = {
+									type: 'h1',
+									props: {
+										className: 'greeting',
+										children: 'Hello, world!'
+									}
+								};			
+						</code></pre>
+					<p>Esta estructura está simplificada</p>
+
+				</section>
+
+				<section>
+					<h3>Conclusión que podemos sacar</h3>
+
+					<h5>Estos h1, p, div utilizados en React no son etiquetas html sino que son elementos de React
+						escritos con JSX</h5>
+
+
+				</section>
+
+				<section>
+					<h2>Conversiones</h2>
+
+
+					<p>
+						<span style="display: inline-block;" class="fragment fade-up">class </span>
+						<span style="display: inline-block;" class="fragment fade-right"> -> </span>
+						<span style="display: inline-block;" class="fragment fade-up">className </span>
+					</p>
+
+					<p>
+						<span style="display: inline-block;" class="fragment fade-up">tabindex </span>
+						<span style="display: inline-block;" class="fragment fade-right"> -> </span>
+						<span style="display: inline-block;" class="fragment fade-up">tabIndex </span>
+					</p>
+
+					<p>
+						<span style="display: inline-block;" class="fragment fade-up">readonly -> readOnly </span>
+
+					</p>
+
+					<p>
+						<span style="display: inline-block;" class="fragment fade-up">srcset -> srcSet </span>
+					</p>
+
+					<p>
+						<span style="display: inline-block;" class="fragment fade-up">alt -> alt</span>
+
+					</p>
+
+					<p>
+						<span style="display: inline-block;" class="fragment fade-up">height -> height </span>
+
+					</p>
+
+					<p class="fragment fade-up">Camel case</p>
+				</section>
+
+
+				<section>
+					<h3>Hijos - Más de un nivel </h3>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const element = (
+								<div>
+								  <h1>Hello!</h1>
+								  <h2>Good to see you here.</h2>
+								</div>
+							  );
+						</code></pre>
+
+					<p>Deberán ir entre paréntesis y tener estar dentro de una etiqueta</p>
+
+				</section>
+
+				<section>
+					<h3>Hijos </h3>
+					<h3>Mal</h3>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							<script type="text/template">
+							const element = <div>  <h1>Hello!</h1>	<h2>Good to see you here.</h2> </div>;
+										</script>
+						</code></pre>
+
+				</section>
+
+				<section>
+					<h3>Hijos </h3>
+					<h3>Mal</h3>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const element = (
+								  <h1>Hello!</h1>
+								  <h2>Good to see you here.</h2>
+							  );
+						</code></pre>
+
+					<p class="fragment fade-up">Cuando hay varios niveles debe existir una etiqueta raíz</p>
+
+				</section>
+
+
+				<section>
+					<h2>Ejemplo</h2>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							import './App.css';
+							import React from 'react';
+
+							class App extends React.Component {
+							
+								render () {
+									const user = {
+									name: "Rosa",
+									last_name: "Ocana",
+									age: 22,
+									};
+								
+									return (
+										<div className="App">
+											<header className="App-header">
+												<p>Nombre: {user.name}</p>
+												<p>Apellido: {user.last_name}</p>
+												<p>Es mayor de edad {user.age > 18 ? 'Si': 'No'}</p>
+											</header>
+										</div>
+									);
+								}
+							}
+
+							export default App;
+						</script>
+						</code></pre>
+				</section>
+			</section>
+
+
+			<!-- Componentes -->
+
+
+			<section>
+				<section data-auto-animate>
+					<h2>Componentes</h2>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Componentes</h2>
+					<p>Pequeñas partes de código independientes, reusables</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Componentes</h2>
+					<p>Reciben propiedades</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Componentes</h2>
+					<p>Se pueden definir como clases o funciones</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Ejemplo de componente Función</h2>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							function Welcome(props) {
+								return <h1>Hello, {props.name}</h1>;
+							}
+						</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Ejemplo de componente Clase</h2>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							class Welcome extends React.Component {
+								render() {
+									return <h1>Hello, {this.props.name}</h1>;
+								}
+							}
+							  
+						</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Ejemplo de componente Clase</h2>
+					<div style="display: flex; flex-direction: row; justify-items: center;">
+						<div style="width: 0px;">
+
+
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+									class Welcome extends React.Component {
+										render() {
+											return <h1>Hello, {this.props.name}</h1>;
+										}
+									}									
+								</code></pre>
+						</div>
+						<div class="medium-font">
+
+							<ol>
+								<li>Nombre en PascalCase</li>
+								<li>Compuestas por elementos</li>
+								<li>Recibe propiedades</li>
+								<li>En los props se puede usar desestructuración de objetos</li>
+							</ol </div>
+						</div>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Componentes</h2>
+					<p>Los elementos pueden ser también componentes definidas por el usuario</p>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							const element = <div />; [Dom element]
+							const element = <Welcome name="Sara" />; [React component]		
+						</script>						
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Props</h2>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							const root = ReactDOM.createRoot(document.getElementById('root'));
+							const element = <Welcome name="Sara" />;    
+							root.render(element);		
+						</script>						
+					</code></pre>
+
+					<div class="fragment medium-font">
+
+						props={name: Sara}
+
+					</div>
+				</section>
+
+				<section>
+					<h2>Composición</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							function App() {
+								return (
+									<div>
+											<Welcome name="Sara" />
+											<Welcome name="Cahal" />
+											<Welcome name="Edite" />
+									</div>
+								);
+							}	
+						</script>						
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Composición</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							<></> -> React.Fragment
+						</script>						
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Props se deben tratar como solo lectura</h2>
+
+				</section>
+
+				<!-- <section>
+					<h2>Binding</h2>
+
+					<p>Si me queda tiempo lo explico junto con clases</p>
+
+				</section> -->
+
+
+			</section>
+
+
+			<!-- Componentes -->
+
+			<section>
+
+				<section data-auto-animate>
+					<h2>Estados y Ciclos de Vida</h2>
+				</section>
+
+				<section>
+					<h3> </h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					class Clock extends React.Component {
+						constructor(props) {
+						  super(props);
+						  this.state = {date: new Date()};
+						}
+					  
+						componentDidMount() {
+						  this.timerID = setInterval(
+								() => this.tick(),
+								1000
+						  );
+						}
+					  
+						componentWillUnmount() {
+						  clearInterval(this.timerID);
+						}
+					  
+						tick() {
+						  this.setState({
+							date: new Date()
+						  });
+						}
+					  
+						render() {
+						  return (
+							<div>
+							  <h1>Hello, world!</h1>
+							  <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+							</div>
+						  );
+						}
+					  }
+					  
+					  const root = ReactDOM.createRoot(document.getElementById('root'));
+					  root.render(<Clock />);
+				</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Estado</h2>
+
+				</section>
+
+				<section>
+					<h2>Estado - Actualización</h2>
+
+					<h4>Incorrecto</h4>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+
+						this.state.comment = 'Hello';
+						
+					</code></pre>
+
+					<h4>Correcto</h4>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						this.setState({comment: 'Hello'});
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Estado</h2>
+
+					<h4>La modificación es asíncrona</h4>
+
+					<h4>Incorrecto</h4>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+
+						this.setState({
+							counter: this.state.counter + this.props.increment,
+						  });
+						
+					</code></pre>
+
+					<h4>Correcto</h4>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						this.setState((state, props) => ({
+							counter: state.counter + props.increment
+						  }));
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Estado - Se mezclan</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						componentDidMount() {
+							fetchPosts().then(response => {
+							  this.setState({
+								posts: response.posts
+							  });
+							});
+						
+							fetchComments().then(response => {
+								this.setState({
+									comments: response.comments
+								});
+							});
+						}
+					</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-auto-animate>
+					<h2>Manejando Eventos</h2>
+				</section>
+				<section data-auto-animate>
+					<h3>Manejando Eventos</h3>
+					<p>on + Evento (onClick, onChange, onMouseOver)</p>
+				</section>
+
+				<section>
+					<h2>Diferencias con el DOM</h2>
+
+					<h4>DOM</h4>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<button onclick="activateLasers()">
+							Activate Lasers
+						  </button>
+					</code></pre>
+
+					<h4>React</h4>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							<button onClick={activateLasers}>
+								Activate Lasers
+						  	</button>
+						</script>
+						
+						  
+					</code></pre>
+				</section>
+				<section>
+					<h2>Evento sintético</h2>
+				</section>
+				<section>
+					<h2>Pasando argumentos</h2>
+
+					<h4>Arrows functions</h4>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+						</script>
+					</code></pre>
+				</section>
+
+			</section>
+
+			<section>
+				<section data-auto-animate>
+					<h2>Listas y llaves</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Listas y llaves</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							function NumberList(props) {
+								const numbers = props.numbers;
+								const listItems = numbers.map((number) =>
+								  <li key={number.toString()}>
+									{number}
+								  </li>
+								);
+								return (
+								  <ul>{listItems}</ul>
+								);
+							}
+						</script>
+					</code></pre>
+				</section>
+				<section data-auto-animate>
+					<h2>Listas y llaves</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							function NumberList(props) {
+								const numbers = props.numbers;
+								return (
+								  <ul>
+									{numbers.map((number) =>
+									  <ListItem key={number.toString()} value={number} />
+									)}
+								  </ul>
+								);
+							}
+						</script>
+					</code></pre>
+				</section>
+			</section>
+
+			
+			<section>
+				<section data-auto-animate>
+					<h2 class="italic">Conditional rendering</h2>
+				</section>
+				<section data-auto-animate>
+					<h2 class="italic">Conditional rendering</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							function UserGreeting(props) {
+								return <h1>Welcome back!</h1>;
+							}
+							
+							function GuestGreeting(props) {
+								return <h1>Please sign up.</h1>;
+							}
+							
+							function Greeting(props) {
+								const isLoggedIn = props.isLoggedIn;
+								if (isLoggedIn) {
+									return <UserGreeting />;
+								}
+								return <GuestGreeting />;
+							}
+						</script>
+					</code></pre>
+				</section>
+				<section>
+					<h2>Variables elementos</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							render() {
+								const isLoggedIn = this.state.isLoggedIn;
+								let button;
+								if (isLoggedIn) {
+								  button = <LogoutButton onClick={this.handleLogoutClick} />;
+								} else {
+								  button = <LoginButton onClick={this.handleLoginClick} />;
+								}
+							
+								return (
+									<div>
+										<Greeting isLoggedIn={isLoggedIn} />
+										{button}
+									</div>
+								);
+							}
+						</script>
+					</code></pre>
+				</section>
+				<section>
+					<h2>Operador lógico &&</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							function Mailbox(props) {
+								const unreadMessages = props.unreadMessages;
+								return (
+									<div>
+										<h1>Hello!</h1>
+										{unreadMessages.length > 0 &&
+											<h2>
+											You have {unreadMessages.length} unread messages.
+											</h2>
+										}
+									</div>
+								);
+							}
+						</script>
+					</code></pre>
+				</section>
+
+
+
+				<section>
+					<h2>Operador condicional</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							render() {
+								const isLoggedIn = this.state.isLoggedIn;
+								return (
+									<div>
+										The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+									</div>
+								);
+							}
+						</script>
+					</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section data-auto-animate>
+					<h2 class="italic">CSS en React</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							import React from "react";
+
+							function TodoCounter(){
+								return(
+									<h2 style={{
+											color: 'red',
+											backgroundColor: 'yellow'
+										}}
+									>
+										Has complentado 2 de 3 ToDos
+									</h2>
+								)
+							}
+							
+							export {TodoCounter};
+						</script>
+					</code></pre>
+				</section>
+
+			</section>
+
+			<section>
+				<section data-auto-animate>
+					<h2>Persistencia de Datos con el LocalStorage</h2>
+				</section>
+
+				<section data-auto-animate>
+					<h3>Persistencia de Datos con el LocalStorage</h3>
+					<ul>
+						<li>
+							<p>setItem(nombre, dato)</p>
+						</li>
+						<li>
+							<p>getItem(nombre)</p>
+						</li>
+						<li>
+							<p>removeItem(nombre)</p>
+						</li>
+						<li>
+							<p>clear(nombre)</p>
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Persistencia de Datos con el LocalStorage</h3>
+					<ul>
+						<li>
+							<p>setItem(nombre, dato) <span> - Guardar datos</span></p>
+						</li>
+						<li>
+							<p>getItem(nombre) <span> - Acceder a datos</span>
+							</p>
+						</li>
+						<li>
+							<p>removeItem(nombre) <span> - Borrar un dato</span></p>
+						</li>
+						<li>
+							<p>clear(dominio) <span> - Eliminar todos los datos</span></p>
+						</li>
+					</ul>
+				</section>
+
+			</section>
+			<!-- Fin -->
+
+			<section style="text-align: left;">
+				<h1>FIN</h1>
+				<p>
+					Muchas Gracias
+				</p>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/zoom/zoom.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/search/search.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-			// Also available as an ES module, see:
-			// https://revealjs.com/initialization/
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				center: true,
-				hash: true,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
-			});
-
-		</script>
-
-	</body>
 </html>
