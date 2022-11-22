@@ -76,7 +76,7 @@
 
 				<section data-auto-animate>
 					<h3>Formularios en React</h3>
-					<h4>Ejemplo de Formulario en html</h4>
+					<h4>Ejemplo de Formulario en React</h4>
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						<script type="text/template">
 							<form onSubmit={this.handleSubmit}>
@@ -263,8 +263,8 @@
 					<p>Ejemplos: temas, datos del usuario, caché </p>
 				</section>
 				<section data-auto-animate>
-					<h2>React Context: Creación</h2>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|4|18|19|9|18>
+					<h3>React Context: Creación</h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 
 						export const ThemeContext = React.createContext({
 							theme: themes.dark, // valor por defecto
@@ -277,14 +277,14 @@
 				<section data-auto-animate>
 					<h2>React Context: estado compartido</h2>
 					<ul>
-						<li>Crea el <code>context</code>context, si el proveedor no especifica un valor entonces los consumidores utilizan el defaultValue</li>
+						<li>Crea el <code>context</code>, si el proveedor no especifica un valor entonces los consumidores utilizan el defaultValue</li>
 						<li>Si el proveedor especifica el valor entonces <code>defaultValue</code> nunca se utiliza</li>
 						<li>Si el valor es <code>undefined</code> tampoco se utilizara como valor por defecto</li>
 					</ul>
 				</section>
 				<section data-auto-animate>
 					<h2>React Context: estado compartido</h2>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|4|18|19|9|18>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						<script type="text/template">
 							<MyContext.Provider value={/* some value */}>
 						</script>
@@ -292,7 +292,7 @@
 				</section>
 				<section data-auto-animate>
 					<h2>React Context: estado compartido</h2>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|4|18|19|9|18>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						<script type="text/template">
 							class MyClass extends React.Component {
 								componentDidMount() {
@@ -307,15 +307,15 @@
 								  let value = this.context;
 								  // hacer algo con el valor
 								}
-							  }
-							  MyClass.contextType = MyContext;
+							}
+							MyClass.contextType = MyContext;
 						</script>
 					</code>
 				</section>
 
 				<section data-auto-animate>
 					<h2>React Context: estado compartido</h2>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|4|18|19|9|18>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=>
 						<script type="text/template">
 							<MyContext.Consumer>
 								{({theme, toggleTheme}) => (   -> object detructing
@@ -479,39 +479,39 @@
 
 					<p>Utilizar más de una vez</p>
 
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|26-30|3-10|12-20|>
 						
 						useEffect(() => {
 							if (isInternationalTrip) {
-							  setForm(oldForm => ({
-								...oldForm,
-								ciudad: {
-								  _id: '',
-								  nombre: '',
-								  pais_id: '',
-								  cod_ciudad: null,
-								},
-							  }));
-							  getCitiesByContryId(currentTravel.empresa.pais._id, []).then(res =>
-								setCities(
-								  res.map(({_id, nombre, pais_id, cod_ciudad}) => ({
-									_id,
-									nombre,
-									pais_id,
-									cod_ciudad,
-								  })),
-								),
-							  );
+								setForm(oldForm => ({
+									...oldForm,
+									ciudad: {
+									_id: '',
+									nombre: '',
+									pais_id: '',
+									cod_ciudad: null,
+									},
+								}));
+								getCitiesByContryId(currentTravel.empresa.pais._id, []).then(res =>
+									setCities(
+									res.map(({_id, nombre, pais_id, cod_ciudad}) => ({
+										_id,
+										nombre,
+										pais_id,
+										cod_ciudad,
+									})),
+									),
+								);
 							} else {
-							  return setCities(ruta_viaje);
+							  	return setCities(ruta_viaje);
 							}
-						  }, [
-							currentTravel.empresa.pais._id,
-							currentTravel.pais._id,
-							ruta_viaje,
-							form.tipo_documento._id,
-							isInternationalTrip,
-						  ]);
+						}, [
+								currentTravel.empresa.pais._id,
+								currentTravel.pais._id,
+								ruta_viaje,
+								form.tipo_documento._id,
+								isInternationalTrip,
+						]);
 						
 					</code></pre>
 				</section>
@@ -532,13 +532,11 @@
 					<h2>Hooks</h2>
 					<h3>Contexto: Estado compartido</h3>
 
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>						
 						const locale = useContext(LocaleContext);
-  						const theme = useContext(ThemeContext);
+						const theme = useContext(ThemeContext);
 					</code></pre>
 
-					<p class="text-red">poner ejemplo de codigo cuando termine context</p>
 				</section>
 
 				<section data-auto-animate>
@@ -546,7 +544,6 @@
 					<h3>useCallback</h3>
 
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						
 						const memoizedCallback = useCallback(
 							() => {
 								doSomething(a, b);
@@ -558,23 +555,23 @@
 
 				<section data-auto-animate>
 					<h2>Hooks</h2>
-					<h3>useRef</h3>
+					<p>useRef</p>
 
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						
 						function TextInputWithFocusButton() {
 							const inputEl = useRef(null);
 							const onButtonClick = () => {
-							  // `current` points to the mounted text input element
+							  // current =  input
 							  inputEl.current.focus();
 							};
 							return (
-							  <>
-								<input ref={inputEl} type="text" />
-								<button onClick={onButtonClick}>Focus the input</button>
-							  </>
+								<>
+									<input ref={inputEl} type="text" />
+									<button onClick={onButtonClick}>Focus the input</button>
+								</>
 							);
-						  }
+						}
 					</code></pre>
 				</section>
 
@@ -626,7 +623,7 @@
 
 				<section data-auto-animate>
 					<h2>Redux</h2>
-					<h3>Problemas que resulve</h3>
+					<h3>Problemas que resuelve</h3>
 					<ul>
 						<li>El estado se necesita en distintos lugares de la aplicación</li>
 						<li>El estado de la aplicación se actualiza frecuentemente en el tiempo</li>
@@ -817,18 +814,18 @@
 								usuario: authReducer.user
 								...
 							};
-						  };
+						};
 						  
-						  const mapDispatchToProps = dispatch => {
+						const mapDispatchToProps = dispatch => {
 							return {
 								deleteGastoFromStore: id => dispatch(deleteGastoFromStore(id)),
 								addConceptGasto: new_gasto => {
 									return dispatch(addConceptGasto(new_gasto));
-							  },
+								},
 							};
-						  };
+						};
 						  
-						  export default connect(mapStateToProps, mapDispatchToProps)(ExpenseFormScreen);
+						export default connect(mapStateToProps, mapDispatchToProps)(ExpenseFormScreen);
 						</code>
 					</pre>
 
@@ -858,7 +855,7 @@
 						};
 						 
 						  
-						  export default connect(mapStateToProps, actionsCreators)(ExpenseFormScreen);
+						export default connect(mapStateToProps, actionsCreators)(ExpenseFormScreen);
 						</code>
 					</pre>
 
@@ -980,7 +977,7 @@
 					<h2>Redux</h2>
 					<h3>Principales conceptos: <span class="italic">Middlewares</span></h3>
 
-					<p>Función que crea y retorna un objeto acción</p>
+					<p>Action Creator: Función que crea y retorna un objeto acción</p>
 
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						exports.setSyncingExpenses = function(value) {
@@ -1100,7 +1097,7 @@
 					<h2>Redux</h2>
 					<h3>API Nueva</h3>
 	
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|1|2|4|5-7|8-19|23>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						<script type="text/template">
 							import React from 'react'
 							import { useSelector, useDispatch } from 'react-redux'
@@ -1123,8 +1120,7 @@
 											<span>{count}</span>
 										<button
 											aria-label="Decrement value"
-											onClick={() => dispatch(decrement())}
-											>
+											onClick={() => dispatch(decrement())}>
 										Decrement
 										</button>
 									</div>
@@ -1135,13 +1131,6 @@
 					</code></pre>
 
 				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>File Structure</h3>
-
-				</section>
-
 			</section>
 
 			<!-- Fin -->
