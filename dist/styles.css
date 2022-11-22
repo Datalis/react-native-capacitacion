@@ -6,6 +6,10 @@
     letter-spacing: 0.01em;
 }
 
+.react-logo-subtitle {
+    font-size: 30pt;
+}
+
 .italic {
     font-style: italic;
 
@@ -13,4 +17,8 @@
 
 .medium-font {
     font-size: 20pt;
+}
+
+.text-red {
+    color: red;
 }
