@@ -29,1109 +29,664 @@
 					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
 						alt="" height="300">
 				</a>
-				<p class="react-logo">React</p>
-				<p class="react-logo react-logo-subtitle">Parte 2</p>
+				<p class="react-logo">React Native</p>
+			
 			</section>
-
 
 			<section>
 				<section data-auto-animate>
 					<h2>Contenido de la clase</h2>
 				</section>
-
 				<section data-auto-animate>
 					<h2>Contenido de la clase</h2>
-					<ol>
-						<li>Formularios en React</li>
-						<li>React Context: estado compartido</li>
-						<li>Hooks</li>
-						<li>Redux</li>
+					<ol class="left">
+						<li>Qué es React Native</li>
+						<li>Configuración del entorno de trabajo</li>
+						<li>Estructura del proyecto</li>
+						<li>Conectar y compilar en dispositivos reales</li>
+						<li>Principales componentes</li>
+					</ol>
+				</section>
+				<section data-auto-animate>
+					<h2>Contenido de la clase</h2>
+					<ol start="6" >
+						<li>Estilos</li>
+						<li>Navegación en React</li>
+						<li>Creación de Formularios</li>
+						<li>Bibliotecas de terceros</li>
 					</ol>
 				</section>
 			</section>
 
 			<section>
 				<section>
-					<h2>Recuento de la clase anterior</h2>
+					<h2>Recuento de lo que sabemos de React</h2>
 				</section>
 			</section>
 
 			<section>
 				<section data-auto-animate>
-					<h3>Formularios en React</h3>
+					<h3>¿Qué es React Native?</h3>
 				</section>
 				<section data-auto-animate>
-					<h3>Formularios en React</h3>
-					<h4>Ejemplo de Formulario en html</h4>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<form>
-							<label>
-							  Name:
-							  <input type="text" name="name" />
-							</label>
-							<input type="submit" value="Submit" />
-						</form>
-						</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h3>Formularios en React</h3>
-					<h4>Ejemplo de Formulario en React</h4>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							<form onSubmit={this.handleSubmit}>
-								<label>
-									Name:
-								<input type="text" value={this.state.value} onChange={this.handleChange} />
-								</label>
-								<input type="submit" value="Submit" />
-							</form>
-						</script>
-						</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h3>Formularios en React</h3>
-					<p>El submit se comporta como en html</p>
-					<p>Los elementos son capaces de mantener su estado interno</p>
-					<p>EL estado habría que guardarlo en el estado de la componente</p>
-
-				</section>
-
-				<section>
-					<h3>Formularios en React</h3>
-					<h4>Principales Elementos</h4>
-					<ul>
-						<li>Input</li>
-						<li>Textarea</li>
-						<li>Select</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Formularios en React</h3>
-					<h4>Principales Elementos: Input</h4>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							<input 
-								type="text" 
-								value={this.state.value} 
-								onChange={this.handleChange} />
-						</script>
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Formularios en React</h3>
-					<h4>Principales Elementos: Textarea</h4>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							<textarea 
-								value={this.state.value} 
-								onChange={this.handleChange} />
-						</script>
-					</code></pre>
-
-				</section>
-
-				<section>
-					<h3>Formularios en React</h3>
-					<h4>Principales Elementos: Select</h4>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							<select value={this.state.value} onChange={this.handleChange}>
-								<option value="grapefruit">Grapefruit</option>
-								<option value="lime">Lime</option>
-								<option value="coconut">Coconut</option>
-								<option value="mango">Mango</option>
-							  </select>
-						</script>
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Formularios en React</h3>
-					<h4>Principales Elementos: Multiple Select</h4>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							<select multiple={true} value={['B', 'C']}>
-						</script>
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Formularios en React</h3>
-					<h4 class="italic">Two-way-databinding</h4>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|4|18|19|9|18>
-						<script type="text/template">
-							...
-							constructor(props) {
-								super(props);
-								this.state = {value: ''};
-								this.handleChange = this.handleChange.bind(this);
-							}
-
-							handleChange(event) {
-								this.setState({value: event.target.value});
-							}
-
-							render() {
-								return (
-								<form onSubmit={this.handleSubmit}>
-									<label>
-									Name:
-									<input 	type="text" 
-											value={this.state.value} 
-											onChange={this.handleChange} />
-									</label>
-									<input type="submit" value="Submit" />
-								</form>
-								);
-							}
-							
-						</script>
-					</code></pre>
-
-				</section>
-
-				<section>
-					<h3>Formularios en React</h3>
-					<h4>Componentes Controladas</h4>
-				</section>
-
-				<section>
-					<h3>Formularios en React</h3>
-					<h4>Herramientas útiles</h4>
-					<p>Yup</p>
-					<p>Formik</p>
-				</section>
-
-
-				<!-- <section>
-					<h3>Estructura de la carpeta creada</h3>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						├── node_modules
-						├── public
-						│	└── index.html	
-						└── src/
-							├── App.css
-							├── App.js
-							├── App.test.js
-							├── index.css
-							└── index.js
-						</code></pre>
-				</section> -->
-
-				<!-- <section>
-					<h3>Agregos a la estructura</h3>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-							└── src/
-								├── assets/
-								│   ├── img/
-								│       └── foto.jpg
-								│   ├── fonts/
-								│       └──ubuntu.woff2
-								├── components/
-								│   ├── Avatar/
-								│   ├── LoginButton/
-								├── context/
-								│   ├── UserContext.js
-								├── hooks/
-								│   ├── useLocalStorage.js
-								├── utils/
-								│   ├── api.js
-						</code></pre>
-				</section> -->
-			</section>
-
-			<!-- Contexto-->
-			<section>
-				<section data-auto-animate>
-					<h2>React Context: estado compartido</h2>
+					<h3>¿Qué es React Native?</h3>
+					<p>Framework para crear aplicaciones nativas para Android e iOS  usando  React</p>
 				</section>
 				<section data-auto-animate>
-					<h2>React Context: estado compartido</h2>
-					<p>Pasar datos a todo el árbol sin necesidad de hacerlo mediante props </p>
+					<h3>¿Cómo funciona?</h3>
 				</section>
 				<section data-auto-animate>
-					<h2>React Context: estado compartido</h2>
-					<p>Ejemplos: temas, datos del usuario, caché </p>
-				</section>
-				<section data-auto-animate>
-					<h3>React Context: Creación</h3>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-
-						export const ThemeContext = React.createContext({
-							theme: themes.dark, // valor por defecto
-							toggleTheme: () => {}, -> Especificar
-						});
-					</code>
-					</pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>React Context: estado compartido</h2>
-					<ul>
-						<li>Crea el <code>context</code>, si el proveedor no especifica un valor entonces los consumidores utilizan el defaultValue</li>
-						<li>Si el proveedor especifica el valor entonces <code>defaultValue</code> nunca se utiliza</li>
-						<li>Si el valor es <code>undefined</code> tampoco se utilizara como valor por defecto</li>
-					</ul>
-				</section>
-				<section data-auto-animate>
-					<h2>React Context: estado compartido</h2>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							<MyContext.Provider value={/* some value */}>
-						</script>
-					</code>
-				</section>
-				<section data-auto-animate>
-					<h2>React Context: estado compartido</h2>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							class MyClass extends React.Component {
-								componentDidMount() {
-								  let value = this.context; // aqui toma el valor del proveedor
-								  // hacer algo con el valor
-								}
-								componentDidUpdate() {
-								  let value = this.context;
-								  // hacer algo con el valor
-								}
-								render() {
-								  let value = this.context;
-								  // hacer algo con el valor
-								}
-							}
-							MyClass.contextType = MyContext;
-						</script>
-					</code>
-				</section>
-
-				<section data-auto-animate>
-					<h2>React Context: estado compartido</h2>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=>
-						<script type="text/template">
-							<MyContext.Consumer>
-								{({theme, toggleTheme}) => (   -> object detructing
-									<button
-									onClick={toggleTheme}
-									style={{backgroundColor: theme.background}}>
-									Toggle Theme
-									</button>
-								)}
-							</MyContext.Consumer>
-						</script>
-					</code>
-				</section>
-			</section>
-
-
-			<!-- Hooks-->
-			<section>
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-				</section>
-				<section data-auto-animate>
-					<h2>Hooks</h2> <!-- Que son-->
-					<p>Utilizar muchas de las bondades de React sin escribir clases</p>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks: Motivos</h2> <!-- Motivos-->
-
-					<ul>
-						<li>Se puede seguir utilizando las clases</li>
-						<li>Componentes complejas difíciles de entender</li>
-						<li>Lógica separada en los ciclos de vida </li>
-						(<code class="medium-font">componentDidMount</code>, <code
-							class="medium-font">componentDidUpdate</code> ...)
-						<li class="italic">Separation of concerns</li>
-					</ul>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks: Reglas</h2> <!-- Motivos-->
-
-					<p>
-						Solo llamarlos dentro de funciones componentes y en el nivel mas alto, no dentro de ciclos, etc
-					</p>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Estado</h3>
-
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							const [count, setCount] = useState(0);
-						</script>
-						</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Estado: Comportamiento</h3>
-
-					<p>Valor incial</p>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Estado</h3>
-
-					<p>No mezcla el estado anterior con el nuevo</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						
-						const [{comments, posts}, setCommentsPots] = useState({comments: [], posts: []});
-					
-						...
-
-						setCommentsPots({comments: [...], posts: [...]})
-						
-						</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Estado</h3>
-
-					<p>Utilizar más de una vez</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						
-							const [comments, setComemments] = useState([]);
-							const [posts, setPosts] = useState([]);
-
-							...
-
-							setComemments([...])
-							setPosts([...])
-						
-						</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Estado</h3>
-
-					<p>Utilizar más de una vez</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						
-							const [comments, setComemments] = useState([]);
-							...
-
-							setComemments( prevState => {...})
-						</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Efecto</h3>
-
-
-					<p>Se resume en: Antes de cada render</p>
-					<p>componentDidMount + componentDidUpdate</p>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Efecto: Utilización</h3>
-
-					<ul>
-						<li>Traer datos</li>
-						<li>Suscribirnos</li>
-						<li>Ejecutar alguna acción antes del render</li>
-					</ul>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Efecto</h3>
-
-					<p>Utilizar más de una vez</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						
-						useEffect(() => {
-							// Update the document title using the browser API
-							document.title = `You clicked ${count} times`;
-						
-							return "Algo a hacer cuando la componente se desmonte"
-						  }, ["variables en la clase de las que depende"]);
-						
-					</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Efecto</h3>
-
-					<p>Utilizar más de una vez</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|26-30|3-10|12-20|>
-						
-						useEffect(() => {
-							if (isInternationalTrip) {
-								setForm(oldForm => ({
-									...oldForm,
-									ciudad: {
-									_id: '',
-									nombre: '',
-									pais_id: '',
-									cod_ciudad: null,
-									},
-								}));
-								getCitiesByContryId(currentTravel.empresa.pais._id, []).then(res =>
-									setCities(
-									res.map(({_id, nombre, pais_id, cod_ciudad}) => ({
-										_id,
-										nombre,
-										pais_id,
-										cod_ciudad,
-									})),
-									),
-								);
-							} else {
-							  	return setCities(ruta_viaje);
-							}
-						}, [
-								currentTravel.empresa.pais._id,
-								currentTravel.pais._id,
-								ruta_viaje,
-								form.tipo_documento._id,
-								isInternationalTrip,
-						]);
-						
-					</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Efecto: Comportamiento</h3>
-
-					<ul>
-						<li>La función argumento se crea luego de cada render</li>
-						<li>No se ejecuta de forma síncrona</li>
-						<li>Para correrlo solo una vez dejar el array de dependencias vacío</li>
-					</ul>
-				</section>
-
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Contexto: Estado compartido</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>						
-						const locale = useContext(LocaleContext);
-						const theme = useContext(ThemeContext);
-					</code></pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>useCallback</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						const memoizedCallback = useCallback(
-							() => {
-								doSomething(a, b);
-							},
-							[a, b],
-						);
-					</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<p>useRef</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						
-						function TextInputWithFocusButton() {
-							const inputEl = useRef(null);
-							const onButtonClick = () => {
-							  // current =  input
-							  inputEl.current.focus();
-							};
-							return (
-								<>
-									<input ref={inputEl} type="text" />
-									<button onClick={onButtonClick}>Focus the input</button>
-								</>
-							);
-						}
-					</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Construir nuestro propio Hook</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						
-						export function usePlatesKmInfo(travelExpenses, formId, currentTravel) {
-							const [platesKmInfo, setPlatesKmInfo] = useState({});
-						  
-							useEffect(() => {
-							  let tvlExpns = travelExpenses.filter(e => e._id !== formId);
-							  setPlatesKmInfo(getPlatesKmsInExpenses(tvlExpns, currentTravel));
-							}, [currentTravel, formId, travelExpenses]);
-						  
-							return platesKmInfo;
-						}
-					</code></pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Hooks</h2>
-					<h3>Resumen</h3>
-				</section>
-
-
-			</section>
-
-
-			<!-- Redux -->
-
-
-			<section>
-				<section data-auto-animate>
-					<h2>Redux</h2>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<ul>
-						<li>Biblioteca para manejar el estado global de la aplicación</li>
-						<li>Se puede utilizar con otros frameworks (React, Vue, Angular, ..)</li>
-						<li>Inmutable</li>
-					</ul>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Problemas que resuelve</h3>
-					<ul>
-						<li>El estado se necesita en distintos lugares de la aplicación</li>
-						<li>El estado de la aplicación se actualiza frecuentemente en el tiempo</li>
-					</ul>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Para usarlo en react</h3>
-
-					<code>npx create-react-app my-app --template redux</code>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Para usarlo en react</h3>
-
-					<code>npm install @reduxjs/toolkit react-redux</code>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos</h3>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: Acciones</h3>
-
-					<p>Objeto que describe un evento en la app</p>
-				</section>
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: Acciones</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						{
-							type: ActionTypes.SYNC_EXPENSES,
-							isSyncing: value, // payload
-						}
-					</code></pre>
-				</section>
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Action Creators</span></h3>
-					<p>Función que crea y retorna un objeto acción</p>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Action Creators</span></h3>
-
-					<p>Función que crea y retorna un objeto acción</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						exports.setSyncingExpenses = function(value) {
-							console.log('setSyncingExpenses', value);
-							return {
-								type: ActionTypes.SYNC_EXPENSES,
-								isSyncing: value,
-							};
-						};
-					</code></pre>
-				</section>
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Reducers</span></h3>
-
-					<p>Manejador de eventos</p>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Reducers</span></h3>
-
-					<p>Acción + Estado actual => Actualización del estado</p>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Reducers</span></h3>
-
+					<h3>Ventajas</h3>
 					<ol>
-						<li>Hacer una copia del estado actual</li>
-						<li>Actualizar los valores</li>
-						<li>Retornar copia como estado actual</li>
+						<li>React</li>
+						<li class="italic">Hot reload</li>
+						<li>Multiplataforma</li>
 					</ol>
 				</section>
-
 				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Reducers</span></h3>
+					<h3>Ejemplos de aplicaciones</h3>
+					<ol>
+						<li>Instagram</li>
+						<li>Skype</li>
+						<li>Walmart</li>
+						<li>Airbnb</li>
+					</ol>
+				</section>
+			</section>
 
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|1|2|4-8|11>
-						function counterReducer(state = initialState, action) {
-							if (action.type === 'counter/increment') {
-							  // Hacer copia del estado
-							  return {
-								...state,
-								// actualizar la copia y retornar el estado
-								value: state.value + 1
-							  }
-							}
-							// retornar el estado que teníamos
-							return state
-						}
-					</code></pre>
-
+			<!-- Configuración del entorno de trabajo-->
+			<section>
+				<section data-auto-animate>
+					<h2>Configuración del entorno de trabajo</h2>
 				</section>
 				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Store</span></h3>
-
-					<p>Creado a partir de uno o mas reducers</p>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|1|2|4|15>
-						import {createStore, combineReducers, applyMiddleware} from 'redux';
-						import reduxThunk from 'redux-thunk';
-
-						const appReducer = combineReducers({
-							authReducer: authReducer,
-							settingsReducer: settingsReducer,
-							syncReducer: syncReducer,
-							...
-						});
-
-						const rootReducer = (state, action) => {
-							return appReducer(state, action);
-						};
-						  
-						const store = createStore(rootReducer, applyMiddleware(reduxThunk));
-						export default store;
-
-						</code>
-					</pre>
-
+					<h2>Configuración del entorno de trabajo</h2>
+					<p>react-native-cli</p>
 				</section>
-
 				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Store</span></h3>
-					
-					<p>Funciones a las que se puede acceder</p>
+					<h2>Configuración del entorno de trabajo</h2>
+					<p>Expo</p>
+				</section>
+			</section>
 
+			<!-- Inciar proyecto-->
+			<section>
+				<section>
+					<h2>Iniciar el proyecto</h2>
+					<code class="medium-font">npx react-native init NombreDelProyecto</code>
+				</section>
+				<section>
+					<h2>Estructura del Proyecto</h2>
+				</section>
+				<section>
+					<h2>Iniciar la aplicación</h2>
+					<code class="medium-font">npx react-native start</code> <br>
+					<code class="medium-font">npx react-native run-android</code>
+				</section>
+			</section>
+
+			<!-- Componentes-->
+			<section>
+				<section data-auto-animate>
+					<h2>Componentes</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes</h2>
 					<ul>
-						<li>dispatch</li>
-						<li>getState</li>
-						<li>Subscribe</li>
+						<li class="italic">Community components</li>
+						<li class="italic">Core components</li>
+						<li>Componentes nativas</li>
 					</ul>
 				</section>
-
 				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Cómo acceder al store</h3>
+					<h2>Componentes: View</h2>
 
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						<script type="text/template">
-							...
-							const rootElement = document.getElementById("root");
-							ReactDOM.render(
-								<Provider store={store}>
-									<App />
-								</Provider>,
-								rootElement
-							);
-							</script>
-
-						</code>
-					</pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Cómo acceder al store: Connect</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						const mapStateToProps = state => {
-							const {
-							  authReducer,
-							} = state;
-							
-							return {
-								...
-								empresa: authReducer.userEnterprise,
-								usuario: authReducer.user
-								...
-							};
-						};
-						  
-						const mapDispatchToProps = dispatch => {
-							return {
-								deleteGastoFromStore: id => dispatch(deleteGastoFromStore(id)),
-								addConceptGasto: new_gasto => {
-									return dispatch(addConceptGasto(new_gasto));
-								},
-							};
-						};
-						  
-						export default connect(mapStateToProps, mapDispatchToProps)(ExpenseFormScreen);
-						</code>
-					</pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Cómo acceder al store: Connect</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						const mapStateToProps = state => {
-							const {
-							  authReducer,
-							} = state;
-							
-							return {
-								...
-								empresa: authReducer.userEnterprise,
-								usuario: authReducer.user
-								...
-							};
-						};
-						  
-						const actionsCreators = {
-							deleteGastoFromStore,
-							addConceptGasto,
-						};
-						 
-						  
-						export default connect(mapStateToProps, actionsCreators)(ExpenseFormScreen);
-						</code>
-					</pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Cómo actualizar el estado</h3>
-					
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						store.dispatch(setSyncingExpenses(active))
-
-						</code>
-					</pre>
-				</section>
-
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Cómo acceder al store: Selector</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						import { useSelector } from 'react-redux'
-						const count = useSelector(state => state.authReducer.userEnterprise) // read and Subscribe
-						
-						</code>
-					</pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Cómo acceder al store: Dispatch</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						import { useSelector, useDispatch } from 'react-redux'
-
-						... 
-						const dispatch = useDispatch()
-
-						...
-
-						// dispatch(actionCreator(payload))
-						dispatch(setSyncingExpenses(active))
-						</code>
-					</pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Cómo acceder al store: Connect</h3>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						const mapStateToProps = state => {
-							const {
-							  authReducer,
-							} = state;
-							
-							return {
-								...
-								empresa: authReducer.userEnterprise,
-								usuario: authReducer.user
-								...
-							};
-						};
-						  
-						const actionsCreators = {
-							deleteGastoFromStore,
-							addConceptGasto,
-						};
-						 
-						  
-						  export default connect(mapStateToProps, actionsCreators)(ExpenseFormScreen);
-						</code>
-					</pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<p>mapStateToProps</h3>
-
+					<ul>
+						<li>Elemento rectangular</li>
+						<li>Parecido a un div</li>
+						<li>Elemento contenedor</li>
+					</ul>
 				</section>
 				<section data-auto-animate>
-					<h2>Redux</h2>
-					<p>mapDispatchToProps</p>
+					<h2>Componentes: Text</h2>
+					<ul>
+						<li>Elemento mediante el cual se va a visualizar texto</li>
+						<li>Elemento análgo en el web: p</li>
+					</ul>
 				</section>
-
-				<section>
-					<h3>Estructura de los archivos y carpetas</h3>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						├── node_modules
-						├── public
-						│	└── index.html	
-						└── src/
-							├── redux/
-								├── actions/	
-									├── syncActions
-								├── constants/
-									├── syncConstants
-								├── reducers/
-									├── syncReducer						
-							├── App.css
-							├── App.js
-							├── App.test.js
-							├── index.css
-							└── index.js
-						</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Middlewares</span></h3>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>Principales conceptos: <span class="italic">Middlewares</span></h3>
-
-					<p>Action Creator: Función que crea y retorna un objeto acción</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						exports.setSyncingExpenses = function(value) {
-							console.log('setSyncingExpenses', value);
-							return {
-								type: ActionTypes.SYNC_EXPENSES,
-								isSyncing: value,
-							};
-						};
-					</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h5>Principales conceptos: <span class="italic">Middlewares</span></h5>
-
-					<p>Función que crea y retorna un objeto acción</p>
-
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						export function updateUserInfo(newuser) {
-							return (dispatch, getState) => {
-								User.getAttachment(newuser)
-									.then(attach => {
-										if (attach) {
-										dispatch(uploadProfileImage(attach));
-										} else {
-										dispatch(uploadProfileImage(null));
-										}
-									})
-									.catch(err => {
-										CrashReporter.notify(err);
-										// do something with error
-									});
-								dispatch(setUser(newuser));			
-							};
-					}
-					</code></pre>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h5>Principales conceptos: <span class="italic">Middlewares</span></h5>
-
-					<p>Creado a partir de uno o mas reducers</p>
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
-						...
-						  
-						const store = createStore(rootReducer, applyMiddleware(reduxThunk));
-
-						....
-
-						</code>
-					</pre>
-
-				</section>
-
-				<!-- <p> Api nueva de redux</p> -->
 				
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>API Nueva</h3>
-					<p>Toda la lógica parecida en un mismo lugar</p>
+				<section>
+					<h2>Componentes: Image</h2>
+					<ul>
+						<li>Visualizar imágenes</li>
+						<li>Elemento análgo en el web: img</li>
+					</ul>
 				</section>
-
 				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>API Nueva</h3>
-	
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|1|2|4|5-7|8-19|23>
-						import { createSlice } from '@reduxjs/toolkit' // from UI toolkit
-
-						export const counterSlice = createSlice({
-							name: 'counter',   // nombre,
-							initialState: {   // estado inicial,
-								value: 0,
-							},
-							reducers: {  // definir como cambia el estado
-								increment: (state) => {
-									// Actualizar el estado como "mutando"
-									state.value += 1
-								},
-								decrement: (state) => {
-									state.value -= 1
-								},
-								incrementByAmount: (state, action) => {
-									state.value += action.payload
-								},
-							},
-						})
-
-						// Se generan automáticamente
-						export const { increment, decrement, incrementByAmount } = counterSlice.actions
-
-						export default counterSlice.reducer
-					</code></pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>API Nueva</h3>
-	
-					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|1|2|4|5-7|8-19|23>
-						import { configureStore } from '@reduxjs/toolkit'
-						import counterReducer from '../features/counter/counterSlice'
-
-						export default configureStore({
-							reducer: {
-								counter: counterReducer,
-							},
-						})
-					</code></pre>
-
-				</section>
-
-				<section data-auto-animate>
-					<h2>Redux</h2>
-					<h3>API Nueva</h3>
-	
+					<h2>Componentes: Image</h2>
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						<script type="text/template">
-							import React from 'react'
-							import { useSelector, useDispatch } from 'react-redux'
-							import { decrement, increment } from './counterSlice'
-							import styles from './Counter.module.css'
-
-							export function Counter() {
-							const count = useSelector((state) => state.counter.value)
-							const dispatch = useDispatch()
-
-							return (
-								<div>
-									<div>
-										<button
-											aria-label="Increment value"
-											onClick={() => dispatch(increment())}
-											>
-											Increment
-										</button>
-											<span>{count}</span>
-										<button
-											aria-label="Decrement value"
-											onClick={() => dispatch(decrement())}>
-										Decrement
-										</button>
-									</div>
-								</div>
-								)
-							}
-							</script>
+							<Image 
+								source={require('./my-icon.png')} 
+								style={{ width: 40, height: 40 }}
+							/>
+					</script>
 					</code></pre>
-
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: Image</h2>
+					<div>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							<script type="text/template">
+							<Image 
+								source={{uri: 'https://reactjs.org/logo-og.png'}}
+								style={{width: 400, height: 400}} 
+							/>
+						</script>
+						</code></pre>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: Image</h2>
+					<div>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							<script type="text/template">
+								<Image
+									style={{
+										width: 51,
+										height: 51,
+										resizeMode: 'contain'
+									}}
+									source={{
+										uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='
+									}}
+								/>
+						</script>
+						</code></pre>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: ScrollView</h2>
+					<ul>
+						<li>Contenedor general</li>
+						<li class="italic">scrollable</li>
+						<li>Pueden ser horizontales o verticales</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: TextInput</h2>
+					<ul>
+						<li>Introducir texto</li>
+						<li>Elemento análogo en el web: inputs</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: TextInput</h2>
+					<h4>Propiedades</h4>
+					<ul>
+						<li>keyboardType</li>
+						<li>placeholder</li>
+						<li>onChange</li>
+						<li>onChangeText</li>
+						<li>onFocus</li>
+						<li>autoCapitalize</li>
+						<li>editable</li>
+					</ul>	
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: FlatList</h2>
+					<ul>
+						<li>Visualizar lista de datos</li>
+						<li>Largas listas no se renderean completas</li>
+						<li>Admiten encabezado, Pie de lista, separador ...</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: FlatList</h2>
+					<ul>
+						<li>data</li>
+						<li>renderItem</li>
+						<li>keyExtractor</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: FlatList</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							<FlatList
+								data={DATA}
+								renderItem={renderItem}
+								keyExtractor={item => item.id}
+							/>
+					</script>
+					</code></pre>
+				</section>
+				<section data-auto-animate>
+					<div class="r-hstack">
+						<div style="text-align: left;">
+							<h2>Componentes: ImageBackground</h2>
+						</div>
+						<div class="fragment fade-up">
+							<img src="dist/banner_image.jpg">
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: SafeAreaView</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Componentes: Touchables</h2>
+					<ul>
+						<li>Button</li>
+						<li>TouchableHighlight</li>
+						<li>TouchableNativeFeedback</li>
+						<li>TouchableOpacity</li>
+						<li>TouchableWithoutFeedback</li>
+					</ul>
+					
 				</section>
 			</section>
+
+			<!-- Estilos -->
+			<section>
+				<section data-auto-animate>
+					<h2>Estilos</h2>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Estilos: createStyleSheet</h2>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							import React from 'react';
+							import { StyleSheet, Text, View } from 'react-native';
+							
+							const MyComponent = () => {
+								return (
+									<View style={styles.container}>
+										<Text style={styles.red}>just red</Text>
+									</View>
+								);
+							};
+					
+							const styles = StyleSheet.create({
+								container: {
+									marginTop: 50,
+								},
+								bigBlue: {
+									color: 'blue',
+									fontWeight: 'bold',
+									fontSize: 30,
+								},
+								red: {
+									color: 'red',
+								},
+							});
+					
+							export default LotsOfStyles;
+						</script></code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Estilos: Inline</h2>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							<Icon
+								name="plus"
+								type="material-community"
+								size={24}
+								color="black"
+								iconStyle={{color: 'rgba(0, 0, 0, .5)'}}
+								containerStyle={styles.buttonIconContainer}
+						  />
+					</script></code></pre>
+				</section>
+			</section>
+
+			<!-- Navigation -->
+			<section>
+				<section data-auto-animate>
+					<h2>Navegación</h2>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Navegación</h2>
+					<p>React Native Navigation</p>
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Instalación</h4>
+					<code>npm install @react-navigation/native</code> <br>
+					<code>npm install react-native-screens react-native-safe-area-context</code> <br>
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Instalación</h4>
+					<code>npm install @react-navigation/native</code> <br>
+					<code>npm install react-native-screens react-native-safe-area-context</code> <br>
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Instalación</h4>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						import android.os.Bundle;
+
+						@Override
+						protected void onCreate(Bundle savedInstanceState) {
+							super.onCreate(null);
+						}
+					</code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation</h4>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+						<NavigationContainer>
+							{ ... }
+						</NavigationContainer>
+					</script>
+					</code></pre>
+
+					<p>Aquí se guarda el estado de la Navegación</p>
+
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Stacks</h4>
+
+					<ul>
+						<li>Pilas de páginas</li>
+						<li>Agrupar páginas</li>
+						<li>Encabezado</li>
+						<li>Animaciones</li>
+					</ul>
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Stack Navigator</h4>
+
+					<code class="medium-font">npm install @react-navigation/native-stack</code>
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Stack Navigator</h4>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						<script type="text/template">
+							import * as React from 'react';
+							import { View, Text } from 'react-native';
+							import { NavigationContainer } from '@react-navigation/native';
+							import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+							function HomeScreen() {
+								return (
+										<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+											<Text>Home Screen</Text>
+										</View>
+									);
+							}
+
+							const Stack = createNativeStackNavigator();
+
+							function App() {
+								return (
+									<NavigationContainer>
+										<Stack.Navigator>
+											<Stack.Screen name="Home" component={HomeScreen} />
+										</Stack.Navigator>
+									</NavigationContainer>
+								);
+							}
+
+							export default App;
+						</script></code></pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Stack Navigator</h4>
+					<h6>Propiedades</h6>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|6|7|8|>
+						<script type="text/template">
+							const Stack = createNativeStackNavigator();
+
+							function App() {
+								return (
+									<NavigationContainer>
+										<Stack.Navigator
+											initialRouteName="Home"
+											screenOptions={{header: ({scene, previous, navigation}) => {}, }}
+										>
+											<Stack.Screen name="Home" component={HomeScreen} />
+											<Stack.Screen name="Travels" component={TravelListScreen} />
+										</Stack.Navigator>
+									</NavigationContainer>
+								);
+							}
+						</script>
+						</code>
+					</pre>
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Screen</h4>
+					<h6>Propiedades</h6>
+
+					<ul>
+						<li>name</li>
+						<li>component</li>
+						<li>options</li>
+						<li>headerMode</li>
+						<li>initialParams</li>
+					</ul>
+				</section>
+			
+				<section data-auto-animate>
+					<h2>Recap de la clase</h2>
+					<ol>
+						<li>Instalar el entorno</li>
+						<li>Crear una aplicación</li>
+						<li>Crear una ventana</li>
+						<li>Crear una Navegación</li>
+					</ol>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Cómo navegar de la pantalla B a C</h2>
+					
+				</section>
+				<section data-auto-animate>
+					<h2>Cómo navegar de la pantalla B a C</h2>
+					<code>navigation.navigate('Details')</code>
+				</section>
+			
+				<section data-auto-animate>
+					<h2>Objeto <span class="italic">navigation</span></h2>
+					<ul>
+						<li>navigate</li>
+						<li>goBack</li>
+						<li>push</li>
+						<li>push</li>
+					</ul>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Pasar parámetros a rutas</h2>
+					<code>navigation.navigate('RouteName', {params})</code>
+				</section>
+
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Navegador Tab</h4>
+					
+				</section>
+
+				<section data-auto-animate>
+					<h4>React Native Navigation: Navegador Drawer</h4>
+					
+				</section>
+				<section data-auto-animate>
+					<h4>React Native Navigation</h4>
+					<p>Los <span class="italic">navigations</span> se pueden anidar</p>
+					
+				</section>
+						
+			</section>
+
+			<section>
+				<section>
+					<h2>Formularios</h2>
+
+				</section>
+
+				<section>
+					<h2>Formularios</h2>
+					<h4>Formik</h4>
+
+				</section>
+				<section>
+					<h2>Formularios: Formik</h2>
+					<p>Grupo de componentes y herramientas para crear formularios en React</p>
+				</section>
+				<section>
+					<h2>Formularios: Formik</h2>
+					<ul>
+						<li>Validar</li>
+						<li>Mostrar errores</li>
+						<li>Manejar la subida del formulario</li>
+					</ul>
+				
+				</section>
+
+				<section>
+					<h2>Formularios: Formik</h2>
+				
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|1-9|2|3|4|5|6-8|1-12|1-17|21-23|24-31|34-37|>
+						<script type="text/template">
+							<Formik
+								validateOnBlur={false}
+								validateOnMount={false}
+								initialValues={getFormValuesByAction()}
+								validate={validate}
+								onSubmit={(values, actions) => {
+									// guardar el viaje en base de datos
+								 })
+							>
+
+							{({
+								handleBlur,
+								handleSubmit,
+								isValid,
+								values,
+								errors,
+								setFieldValue,
+							  }) => ( 
+									<View>						
+										<View style={[styles.itemContainer]}>
+											<Text style={styles.title}>
+												Valor solicitado
+											</Text>
+											<CustomInput
+												placeholder="0000.00"
+												onChangeText={t => {
+													setFieldValue('valor_solicitado', t);
+												}}
+												errorMessage={errors.valor_solicitado}
+												value={values.valor_solicitado}
+											/>
+										</View>
+										<View style={styles.buttonContainer}>
+											<PrimaryButton
+												title={'ENVIAR'}
+												onPress={handleSubmit}
+											/>
+										</View>
+									</View>
+							  )
+							}
+							</Formik
+						</script>
+						</code>
+					</pre>
+
+				</section>
+
+				<section>
+					<h2>Formularios: Formik</h2>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|1-9|2|3|4|5|6-8|1-12|1-17|21-23|24-31|34-37|>
+						<script type="text/template">
+							const validate = values => {
+
+								const errors = {};
+							 
+								if (!values.firstName) {
+							 
+								  errors.firstName = 'Required';
+							 
+								} else if (values.firstName.length > 15) {
+							 
+								  errors.firstName = 'Must be 15 characters or less';
+							 
+								}
+							 
+							}
+
+						</script></code></pre>
+
+				</section>
+				<section>
+					<h2>Formularios</h2>
+					<h4>Yup</h4>
+
+				</section>
+
+				<section>
+					<h2>Formularios</h2>
+					<h4>Yup</h4>
+
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers=|1-9|2|3|4|5|6-8|1-12|1-17|21-23|24-31|34-37|>
+						<script type="text/template">
+							Yup.object({
+
+								firstName: Yup.string()
+						 
+								  .max(15, 'Must be 15 characters or less')
+						 
+								  .required('Required'),
+						 
+								lastName: Yup.string()
+						 
+								  .max(20, 'Must be 20 characters or less')
+						 
+								  .required('Required'),
+						 
+								email: Yup.string().email('Invalid email address').required('Required'),
+						 
+							})
+
+						</script></code></pre>
+				</section>
+			</section>
+
+			<!-- Estilos -->
+			<section>
+				<section data-auto-animate>
+					<h2>Bibliotecas de terceros</h2>
+				</section>
+				<section data-auto-animate>
+					<h2>Native base</h2>
+					<img src="dist/nativebase.png"/>
+				</section>
+				<section data-auto-animate>
+					<h2>React Native Elements</h2>
+					<img src="dist/nativelements.png"/>
+				</section>
+			</section>
+
 
 			<!-- Fin -->
 

@@ -90,3 +90,5 @@ En los detalles marcar:
     Carpeta por defecto
     %LOCALAPPDATA%\Android\Sdk\platform-tools
 
+    Antes de correr el proyecto configurar el modo desarrollador del teléfono y habilitar el debugging sobre USB
+    Correr adb devices
