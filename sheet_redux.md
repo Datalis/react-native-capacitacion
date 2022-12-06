@@ -52,9 +52,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ActionTypes.ADD_EXPENSE:
-      console.log('ejecutaondo accion add');
-      return {...state, expenses: [...state.expenses, action.data]};
+    case ActionTypes.MY_ACTION_NAME:
+      return {...state} // retornar copia del estado cambiado
     default:
       return state;
   }
@@ -66,10 +65,9 @@ export default (state = initialState, action) => {
 ```
 import {ActionTypes} from '../constants/expenseTypes';
 
-export function addExpense(item) {
+export function myAction() {
   return {
-    type: ActionTypes.ADD_EXPENSE,
-    data: item,
+    type: ActionTypes.MY_ACTION_NAME,
   };
 }
 
@@ -79,7 +77,7 @@ export function addExpense(item) {
 
 ```
 export const ActionTypes = {
-  ADD_EXPENSE: 'ADD_EXPENSE',
+  MY_ACTION_NAME: 'MY_ACTION_NAME',
 };
 
 ```
