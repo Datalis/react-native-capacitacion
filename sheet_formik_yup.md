@@ -11,6 +11,8 @@ export const MyReactNativeForm = props => (
   <Formik
     initialValues={{ email: '' }}
     onSubmit={values => console.log(values)}
+    validate={(values) => ({})}
+    validationSchema={Yup.object()}
   >
     {({ handleChange, handleBlur, handleSubmit, values }) => (
       <View>
