@@ -212,9 +212,8 @@ await dbDoc.remove()
 ### Suscribirme a cambios en la colección ($)
 
 ```javascript
-let query = {
-      name: 'gastos',
-      q: {type: {$eq: 'documento'}},
+let selector = {
+    {type: {$eq: 'documento'}},
 }
 
 let query = db.['collection_name'].find(selector);
