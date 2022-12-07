@@ -78,9 +78,9 @@ import {ActionTypes} from '../constants/expenseTypes';
 
 export function myAction() {
   return async (dispatch, state) => {
-    return {
+    return dispatch({
       type: ActionTypes.MY_ACTION_NAME,
-    };
+    });
   }
 }
 
