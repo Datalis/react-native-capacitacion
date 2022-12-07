@@ -41,7 +41,7 @@ export default store;
 
 ### En el reducer.js
 
-```
+```javascript
 import {ActionTypes} from '../constants/expenseTypes';
 
 import expenses from '../../data/expenses';
@@ -62,7 +62,7 @@ export default (state = initialState, action) => {
 ```
 
 ### En el action.js
-```
+```javascript
 import {ActionTypes} from '../constants/expenseTypes';
 
 export function myAction() {
@@ -72,6 +72,20 @@ export function myAction() {
 }
 
 ```
+
+```javascript
+import {ActionTypes} from '../constants/expenseTypes';
+
+export function myAction() {
+  return async (dispatch, state) => {
+    return {
+      type: ActionTypes.MY_ACTION_NAME,
+    };
+  }
+}
+
+```
+
 
 ### En el constants.js
 
@@ -98,6 +112,11 @@ const mapStateToProps = state => {
     expenses: expenseReducer.expenses,
   };
 };
-export default connect(mapStateToProps)(ExpenseListScreen);
+
+const actionsCreators  = {
+  actionFunction
+}
+
+export default connect(mapStateToProps, actionsCreators)(ExpenseListScreen);
 
 ```
