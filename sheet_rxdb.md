@@ -213,7 +213,7 @@ await dbDoc.remove()
 
 ```javascript
 let selector = {
-    {type: {$eq: 'documento'}},
+    type: {$eq: 'documento'},
 }
 
 let query = db.['collection_name'].find(selector);
