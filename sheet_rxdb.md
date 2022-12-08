@@ -12,12 +12,12 @@
 
 ### Recursos a utilizar con RxDb
 
-#### [Adaptadores] (https://pouchdb.com/adapters.html)
+#### [Adaptadores](https://pouchdb.com/adapters.html)
 
 PouchDb no es una base de Datos independiente si no que provee un capa de abstracción sobre otras base de datos para agregarle funcionalidades compatibles con CouchDb
 
-- [pouchdb-adapter-react-native-sqlite] (https://github.com/craftzdog/pouchdb-react-native)
-- [pouchdb-adapter-http] (https://rxdb.info/pouchdb-adapter-asyncstorage) // Habilita la sincronización sobre http
+- [pouchdb-adapter-react-native-sqlite](https://github.com/craftzdog/pouchdb-react-native)
+- [pouchdb-adapter-http](https://rxdb.info/pouchdb-adapter-asyncstorage) // Habilita la sincronización sobre http
 
 #### [RxDb-utils](https://www.npmjs.com/package/rxdb-utils)
 RxDb admite plugins para que los programadores puedan proveer a la biblioteca ciertas funcionalidades faltantes
