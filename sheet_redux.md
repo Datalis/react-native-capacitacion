@@ -72,7 +72,7 @@ export function myAction() {
 }
 
 ```
-
+#### Acciones asíncronas
 ```javascript
 import {ActionTypes} from '../constants/expenseTypes';
 
