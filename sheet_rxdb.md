@@ -17,7 +17,7 @@
 PouchDb no es una base de Datos independiente si no que provee un capa de abstracción sobre otras base de datos para agregarle funcionalidades compatibles con CouchDb
 
 - [pouchdb-adapter-react-native-sqlite](https://github.com/craftzdog/pouchdb-react-native)
-- [pouchdb-adapter-http](https://rxdb.info/pouchdb-adapter-asyncstorage) // Habilita la sincronización sobre http
+- pouchdb-adapter-http // Habilita la sincronización sobre http
 
 #### [RxDb-utils](https://www.npmjs.com/package/rxdb-utils)
 RxDb admite plugins para que los programadores puedan proveer a la biblioteca ciertas funcionalidades faltantes
@@ -30,7 +30,7 @@ Permite sincronizar varias colecciones a una misma base de datos, esto agrega a 
 
   - remote: Dirección remota a la base de datos
   - collections: Arreglo con el nombre de las colecciones a replicar
-  - direction: Objetos especificando la dirección de la replicación si se van a subir los documentos o  se van a descargar
+  - direction: Objetos especificando la dirección de la replicación si se van a subir los documentos o se van a descargar
   - options: Véase más abajo
 
 ### Instalación
@@ -132,11 +132,11 @@ const schema = {
               },
             }
           }
-        },
-        attachments: {
-    encrypted: false,
-  },
-    }
+        }
+    },
+    attachments: {
+      encrypted: false,
+    },
 }
 
 ```
@@ -153,7 +153,7 @@ try {
 
 }
 
-expense_collection.preInsert(function(plainData) {
+collection.preInsert(function(plainData) {
         plainData.type = 'documento';
         plainData.fecha_ingreso = now();
 })
@@ -218,7 +218,7 @@ let selector = {
 
 let query = db.['collection_name'].find(selector);
 
-  // todo: a esto hay qeu ponerle unsuscribe
+  // todo: a esto hay que ponerle unsuscribe
   query.$.subscribe(async _ => {
      // hacer algo cuando esta consulta cambie
   });
